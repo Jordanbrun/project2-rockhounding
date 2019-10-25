@@ -4,15 +4,18 @@ const States = require('../models/state.js');
 
 
 //index
-router.get('/', async (req, res)=>{
+router.get('/', async (req, res) => {
 
   try {
-  
-  
-      };
+    const foundStates = await State.find({});
+    res.render('states/index.ejs', {
+      states: foundStates
+    });
   } catch(err){
     res.send(err);
-  });
+  }
+ });
+
 
 
 // new route
