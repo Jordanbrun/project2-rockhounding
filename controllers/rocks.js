@@ -7,7 +7,10 @@ const Rock = require("..models/rock");
 
 router.get("/", async (req, res) => {
 	try {
-
+		const foundArticles = await Articles.find({})
+		res.render("rocks/index.ejs", {
+			articles: foundArticles
+		});
 	} catch(err) {
 		res.send(err);
 	}
@@ -17,7 +20,7 @@ router.get("/", async (req, res) => {
 
 router.get("/new", async (req, res) => {
 	try {
-
+		res.render("rocks/index.ejs");
 	} catch(err) {
 		res.send(err);
 	}
@@ -27,7 +30,7 @@ router.get("/new", async (req, res) => {
 
 router.post("/", async (req, res) => {
 	try {
-
+		const createRock = await Rock.create(req.body);
 	} catch(err) {
 		res.send(err);
 	}
@@ -37,21 +40,29 @@ router.post("/", async (req, res) => {
 
 router.get("/:id/edit", async (req, res) => {
 	try {
-
+		Rock.findByID(req.params.id, (err, foundRock) => {
+			res.render("rocks/edit.ejs", {
+				rock: foundRock
+			});
+		});
 	} catch(err) {
 		res.send(err);
 	}
-})
+});
 
 // UPDATE AN EDITED ROCK
 
 router.put("/:id", async (req, res) => {
 	try {
-
+		Rock.findByIdAnUpdate(req.params.id, req.body, {new:true}, (err, updatedRock) => {
+			res.redirect("/rocks");
+		});
 	} catch(err) {
 		res.send(err);
 	}
 });
+
+// DELETE ROCKS
 
 router.delete("/:id", async (req, res) => {
 	try {
@@ -61,5 +72,6 @@ router.delete("/:id", async (req, res) => {
 	}
 });
 
-//GITHUB IS AWFUL AND I WANT TO CRY
+
+module.exports = router;
 
