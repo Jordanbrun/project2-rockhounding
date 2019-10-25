@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
 	try {
 
 	} catch (err) {
-
+		res.send(err);
 	}
 
 });
@@ -18,7 +18,7 @@ router.get("/new", async (req, res) => {
 	try {
 
 	} catch(err) {
-
+		res.send(err);
 	}
 });
 
@@ -28,7 +28,7 @@ router.post ("/", async (req, res) => {
 	try {
 
 	} catch(err) {
-
+		res.send(err);
 	}
 
 })
@@ -39,7 +39,7 @@ router.get("/:id", async (req, res) => {
 	try {
 
 	} catch(err) {
-
+		res.send(err);
 	}
 });
 
@@ -49,7 +49,7 @@ router.get("/:id/edit", async (req, res) => {
 	try {
 
 	} catch(err) {
-
+		res.send(err);
 	}
 });
 
@@ -60,7 +60,7 @@ router.put("/:id", async (req, res) => {
 	try {
 
 	} catch(err) {
-
+		res.send(err);
 	}
 });
 
@@ -70,7 +70,7 @@ router.delete("/:id", async (req, res) => {
 	try {
 
 	} catch(err) {
-
+		res.send(err);
 	}
 });
 
