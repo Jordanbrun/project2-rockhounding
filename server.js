@@ -15,6 +15,18 @@ require('./db/db');
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 
+const statesController = require('./controllers/states.js');
+app.use('/states', statesController);
+
+const postsController = require('./controllers/posts.js');
+app.use('/posts', postsController);
+
+const rocksController = require('./controllers/rocks.js');
+app.use('/rocks', rocksController);
+
+const usersController = require('./controllers/users.js');
+app.use('/users', usersController);
+
 // here is the route to our homepage
 
 app.get('/', (req, res) => {
