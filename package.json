@@ -1,7 +1,7 @@
 {
   "name": "project2-rockhounding",
   "version": "1.0.0",
-  "description": "",
+  "description": "Technologies Used:",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Jordanbrun/project2-rockhounding#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
