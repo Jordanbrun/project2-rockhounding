@@ -7,7 +7,7 @@ router.get("/new" (req, res) => {
 	res.render("registration.ejs")
 });
 
-router.post("/registeration", async (req, res) => {
+router.post("/registration", async (req, res) => {
 	try {
 		const hashedPassword = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
 		const newUser = {
