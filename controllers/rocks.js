@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Rock = require("..models/rock");
+const Rock = require("../models/rock");
 
 
 // INDEX FOR ROCKS
 
 router.get("/", async (req, res) => {
 	try {
-		const foundArticles = await Articles.find({})
+		const foundRocks = await Rocks.find({})
 		res.render("rocks/index.ejs", {
-			articles: foundArticles
+			rocks: foundRocks
 		});
 	} catch(err) {
 		res.send(err);
