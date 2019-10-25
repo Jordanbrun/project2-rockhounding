@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 
-router.get("/new" (req, res) => {
+router.get("/new", (req, res) => {
 	res.render("registration.ejs")
 });
 

@@ -74,5 +74,6 @@ router.delete("/:id", async (req, res) => {
 	}
 });
 
+module.exports = router;
 
 //GITHUB IS AWFUL AND I WANT TO CRY
