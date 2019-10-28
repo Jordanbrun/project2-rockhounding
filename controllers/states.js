@@ -37,7 +37,7 @@ router.get("/", async (req,res) => {
 // })
 
 //show state
-router.get('/:name', async (req,res) => {
+router.get('/:name', async (req,res) => { // using name here for the show page. 
 	try {
 		const foundState = await State.findOne({name: req.params.name});
 		const allRocks = await Rock.find({state: foundState})
