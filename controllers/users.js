@@ -28,6 +28,5 @@ router.post("/registration", async (req, res) => {
 })
 
 
-//GITHUB IS AWFUL AND I WANT TO CRY
 
 module.exports = router;
