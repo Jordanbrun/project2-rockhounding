@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const rocksSchema = mongoose.Schema ({
 	name: String,
-	body: String,
 	IMG: String,
 	users: [{
 		type: mongoose.Schema.Types.ObjectID,
