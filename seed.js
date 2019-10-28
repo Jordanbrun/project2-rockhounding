@@ -9,13 +9,10 @@ const stateSeed = async () => {
     console.log(states);
     console.log(states.length)
     if (states.length !== 0) {
-        console.log("if");
         return;
     } else {
 
-	  
-
-	      const stateArr = [
+	    const stateArr = [
 	    {name: "Alabama"},
 	    {name: "Alaska"},
 	    {name: "Arizona"},
@@ -68,9 +65,6 @@ const stateSeed = async () => {
 	    {name: "Wyoming"}
 	    ]
 
-	    // console.log(stateArr);
-	    // const createdState = await State.create(stateArr[0]);
-	    // console.log (createdState);
 	    await State.create(stateArr, (err) => {
 	    	if (err) {
 	    		console.log(err)
@@ -81,17 +75,6 @@ const stateSeed = async () => {
 	    	}
 	    })
 	    
-
-	 //    for (i=0; i<stateArr.length; i++) {
-	 //    	try { 
-	 //    		console.log(stateArr[i])
-
-	 //    		const createdState = await State.create(stateArr[i]);
-	 //    		console.log (createdState);
-	 //    	} catch(err) {
-	 //    		console.log(err);
-	 //    	}
-		// }
 	}
 }
 
