@@ -16,7 +16,6 @@ const postsSchema = mongoose.Schema ({
 	rocks: [{
 		type: mongoose.Schema.Types.ObjectID,
 		ref: "Rock"
-
 	}]
 
 });
