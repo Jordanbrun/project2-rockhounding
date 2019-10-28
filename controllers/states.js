@@ -24,6 +24,7 @@ router.get("/", async (req,res) => {
 router.get("/:id", async (req,res) => {
 	try {
 		const foundState = await State.findById(req.params.id);
+		console.log(req.params.id)
 		const allRocks = await Rock.find({state: foundState})
 		res.render("states/show.ejs", {
 			state: foundState,
