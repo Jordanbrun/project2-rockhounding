@@ -3,7 +3,7 @@ const router = express.Router();
 const State = require('../models/state.js');
 const Rock = require("../models/rock.js")
 const Post = require("../models/post.js")
-const Seed = require('../seed.js')
+const Seed = require('../seed.js');
 
 
 
