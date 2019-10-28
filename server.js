@@ -3,9 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
-
-
 require('./db/db');
+
 
 app.use(session({
 	secret: 'This is our secret string for passwords. A ha ha.',
@@ -36,9 +35,7 @@ app.use('/registration', registrationController);
 app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
-
-
-
+//seedScripting.stateSeed();
 
 app.listen(3000, () => {
 	console.log('I can hear you');

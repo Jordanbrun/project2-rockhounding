@@ -1,63 +1,56 @@
 const express = require('express');
 const router = express.Router();
-const States = require('../models/state.js');
-
-
-//index
-router.get('/', async (req, res) => {
-  res.render('states/index.ejs')
- });
+const State = require('../models/state.js');
+const Rock = require("../models/rock.js")
+const Post = require("../models/post.js")
 
 
 
-// // new route
-router.get('/new', async (req, res)=>{
-  res.render('states/new.ejs');
-  });
+router.get("/", async (req,res) => {
+	try {
+		const allStates = await State.find({});
+		console.log(allStates);
+		res.render("states/index.ejs", {
+			states: allStates
+		});
+	} catch(err) {
+		console.log(err)
+		res.send(err);
+	}
+})
 
 
+router.get("/:id", async (req,res) => {
+	try {
+		const foundState = await State.findById(req.params.id);
+		const allRocks = await Rock.find({state: foundState})
+		res.render("states/show.ejs", {
+			state: foundState,
+			allRocks
+		})
 
-// //edit
-// router.get('/:id/edit', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
-
-// router.post('/', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
+	} catch(err) {
+		res.send(err)
+	}
+})
 
 
-// router.delete('/:id', async (req, res)=>{
+router.get("/:id/:idrocks", async (req,res) => {
+	try {
+		const foundState = await State.findById(req.params.id);
+		const foundRock = await Rock.findById(req.params.idrocks)
+		const allPosts = await Post.find({states: foundState, rocks: foundRock})
+		res.render("states/show2.ejs", {
+			state: foundState,
+			rock: foundRock,
+			posts: allPosts
+		})
 
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
+	} catch(err) {
+		res.send(err)
+	}
+})
 
-// router.put('/:id', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
 
 
 
