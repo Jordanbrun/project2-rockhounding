@@ -74,6 +74,10 @@ router.put('/:id', (req, res)=>{
 
 module.exports = router;
 
+
 // new, post, edit, put, delete
+
+
+
 
 //no order b/c no 

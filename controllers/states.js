@@ -5,73 +5,59 @@ const States = require('../models/state.js');
 
 //index
 router.get('/', async (req, res) => {
-
-  try {
-    const foundStates = await State.find({});
-    res.render('states/index.ejs', {
-      states: foundStates
-    });
-  } catch(err){
-    res.send(err);
-  }
+  res.render('states/index.ejs')
  });
 
 
 
-// new route
+// // new route
 router.get('/new', async (req, res)=>{
-
-  try {
-  
-  
-      };
-  } catch(err){
-    res.send(err);
+  res.render('states/new.ejs');
   });
 
 
 
-//edit
-router.get('/:id/edit', async (req, res)=>{
+// //edit
+// router.get('/:id/edit', async (req, res)=>{
 
-  try {
+//   try {
   
   
-      };
-  } catch(err){
-    res.send(err);
-  });
+//       };
+//   } catch(err){
+//     res.send(err);
+//   });
 
-router.post('/', async (req, res)=>{
+// router.post('/', async (req, res)=>{
 
-  try {
+//   try {
   
   
-      };
-  } catch(err){
-    res.send(err);
-  });
+//       };
+//   } catch(err){
+//     res.send(err);
+//   });
 
 
-router.delete('/:id', async (req, res)=>{
+// router.delete('/:id', async (req, res)=>{
 
-  try {
+//   try {
   
   
-      };
-  } catch(err){
-    res.send(err);
-  });
+//       };
+//   } catch(err){
+//     res.send(err);
+//   });
 
-router.put('/:id', async (req, res)=>{
+// router.put('/:id', async (req, res)=>{
 
-  try {
+//   try {
   
   
-      };
-  } catch(err){
-    res.send(err);
-  });
+//       };
+//   } catch(err){
+//     res.send(err);
+//   });
 
 
 
