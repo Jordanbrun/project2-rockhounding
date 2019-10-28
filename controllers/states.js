@@ -9,58 +9,8 @@ router.get('/', async (req, res) => {
  });
 
 
+//show route 1 - list of rocks
 
-// // new route
-router.get('/new', async (req, res)=>{
-  res.render('states/new.ejs');
-  });
-
-
-
-// //edit
-// router.get('/:id/edit', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
-
-// router.post('/', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
-
-
-// router.delete('/:id', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
-
-// router.put('/:id', async (req, res)=>{
-
-//   try {
-  
-  
-//       };
-//   } catch(err){
-//     res.send(err);
-//   });
-
-
-
-
+// show route 2 - will show the posts and the state
 
 module.exports = router;
