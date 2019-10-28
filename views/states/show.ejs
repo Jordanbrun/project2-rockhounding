@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/css/style.css">    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+
+      <h1>States Index </h1>
+      <a href="/">Back to home</a><br>
+      <a href="/states/new">New photo</a>
+    </header>
+      <main>
+        <h2>Photos</h2>
+          <ul>
+            <% for (let i = 0; i < states.length; i++){%>
+            <li>
+              <a href="/states/<%=states[i]._id%>"><%=states[i].caption%></a>
+            </li>
+              <% } %>
+            </ul>
+          </main>
+  </body>
+</html>

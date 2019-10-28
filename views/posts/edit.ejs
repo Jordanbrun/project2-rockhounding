@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Edit a Post</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/posts">Posts Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="/posts" method="post">
+          <select name="rockId" value="">
+            <% for(let i = 0; i < rock.length; i++) { %>
+                  <option value="<%=allRocks[i]._id%>"><%=allRocks[i].name%></option>
+              <% } %>
+           <select name="stateId">
+
+              <% for(let i = 0; i < state.length; i++) { %>
+                  <option value="<%=allStates[i]._id%>"><%=allStates[i].name%></option>
+              <% } %>
+          </select><br/>
+
+          <input type="text" name="title" value="<%=post.title%>" /><br/>
+           <input type="text" name="location"  value="<%=post.location%>"/><br/>
+           <input type="text" name="IMG" value="<%=post.IMG%>"><br/>
+
+
+          <textarea name="body" value="<%=post.body%>"></textarea><br/>
+          <input type="submit" value="Publish A New Post"/>
+      </form>
+​
+    </main>
+  </body>
+</html>
