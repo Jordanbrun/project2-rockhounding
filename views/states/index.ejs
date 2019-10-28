@@ -12,11 +12,27 @@
 					<li>
 						<a href="/">Home</a>
 					</li>
-					<li>
-						<a href="/states/new">Create a new State</a>
-					</li>
 				</ul>
+				
 			</nav>
+			<main>
 		</header>
+					<!-- This is the clickable map -->
+			<!-- <iframe src="https://createaclickablemap.com/map.php?&id=86171&maplocation=false&online=true" width="900" height="525" style="border: none;"></iframe>
+				
+			<script>if (window.addEventListener){ window.addEventListener("message", function(event) { if(event.data.length >= 22) { if( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } else if (window.attachEvent){ window.attachEvent("message", function(event) { if( event.data.length >= 22) { if ( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); }
+			</script> -->
+		<div class='map'>
+			<iframe src="https://createaclickablemap.com/map.php?&id=86174&maplocation=false&online=true" width="900" height="525" style="border: none;"></iframe>
+<script>if (window.addEventListener){ window.addEventListener("message", function(event) { if(event.data.length >= 22) { if( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } else if (window.attachEvent){ window.attachEvent("message", function(event) { if( event.data.length >= 22) { if ( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } </script>
+		</div>
+			<!-- <ul>
+				 <% for(let i = 0; i < states.length; i++){ %>
+				<li>
+					<a href="/states/<%=states[i]._id%>"><%=states[i].name%></a>
+				</li>
+				<% } %>
+			</ul> -->
+			</main>
 	</body>
 </html>
