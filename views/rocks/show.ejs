@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul>
+<% for(let i = 0; i < rocks.length; i++){ %>
+          <li>
+            <a href="/rocks/<%=rocks[i]._id%>"><%=rocks[i].title%></a>
+          </li>
+        <% } %>
+       </ul>
+</body>
+</html>
