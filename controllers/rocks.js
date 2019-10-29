@@ -22,13 +22,16 @@ router.get("/", async (req,res) => {
 router.get("/:id", async (req,res) => {
 	try {
 		const foundRock = await Rock.findById(req.params.id);
-		const allPosts = await Post.find({rocks: foundRock})
-		res.render("states/show.ejs", {
-			rock: foundrock,
-			allPosts
+		const allPosts = await Post.find({rocks: foundRock});
+		console.log(foundRock);
+		console.log(allPosts);
+		res.render("rocks/show.ejs", {
+			rock: foundRock,
+			posts: allPosts
 		})
 
 	} catch(err) {
+		console.log(err)
 		res.send(err)
 	}
 })
