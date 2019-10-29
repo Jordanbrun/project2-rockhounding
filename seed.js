@@ -9,7 +9,7 @@ const stateSeed = async () => {
     console.log(states);
     console.log(states.length)
     if (states.length !== 0) {
-        return;
+        return true;
     } else {
 
 	    const stateArr = [
@@ -64,25 +64,16 @@ const stateSeed = async () => {
 	    {name: "Wisconsin"},
 	    {name: "Wyoming"}
 	    ]
-
-	    await State.create(stateArr, (err) => {
-	    	if (err) {
-	    		console.log(err)
-	    	} else {
-	    		for (let i=1 ; i<arguments.length; i++) {
-	    			console.log(arguments[i]);
-	    		}
-	    	}
-	    })
+	    console.log(stateArr);
+	    await State.create(stateArr);
 	    
 	}
 }
 
+
 const coloradoRockSeed = async () => {
-    const colorado = await State.find({"name": "Colorado"});
-    console.log(colorado);
-    console.log(colorado.rocks);
-    if (colorado.rocks.length !== 0) {
+	const colorado = await State.findOne({"name": "Colorado"});
+    if (colorado.rocks !== "undefined" && colorado.rocks.length > 0){
         return;
     } else {
 
@@ -94,20 +85,24 @@ const coloradoRockSeed = async () => {
 	    {name: "Rhodochrosite",
 	     IMG: "./public/images/rhodochrosite.png"},
 	    {name: "Topaz",
-	     IMG: "./public/images/toapz-colorado.jpg"},
+	     IMG: "./public/images/toapz.jpg"},
 	    {name: "Amazonite",
 	     IMG: "./public/images/amazonite.png"},
 	    {name: "Smoky Quartz",
 	     IMG: "./public/images/smokey-quartz.png"}
 	    ]
+	    console.log(colorado.rocks);
 
-	    await Rock.create(coloradoRockArr, (err) => {
+	    console.log(coloradoRockArr);
+
+	     await Rock.create(coloradoRockArr, async (err, createdRocks) => {
 	    	if (err) {
 	    		console.log(err)
 	    	} else {
-	    		for (let i=1 ; i<arguments.length; i++) {
-	    			console.log(arguments[i]);
-	    			colorado.rocks.push(arguments[i]);
+	    		for (let i=0 ; i<createdRocks.length; i++) {
+	    			console.log(createdRocks[i]);
+	    			colorado.rocks.push(createdRocks[i])
+	    			await colorado.save();
 	    		}
 	    	}
 	    })
@@ -115,8 +110,13 @@ const coloradoRockSeed = async () => {
 	}
 }
 
+const seedAll = async () =>
+{
+	await stateSeed();
+	await coloradoRockSeed();
+}
+
+seedAll();
 
 
 
-stateSeed();
-coloradoRockSeed();
