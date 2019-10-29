@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-	<ul>
-<% for(let i = 0; i < rocks.length; i++){ %>
+  <head>
+    <meta charset="utf-8">
+    <title>rock.name</title>
+  </head>
+  <body>
+    <main>
+      <h1><%=rock.name%></h1>
+      <small>
+      	<ul>
+		<% for(let i = 0; i < posts.length; i++){ %>
           <li>
-            <a href="/rocks/<%=rocks[i]._id%>"><%=rocks[i].title%></a>
+            <a href="/posts/<%=posts._id%>"><%=posts.title%></a>
           </li>
         <% } %>
        </ul>
-</body>
+   	</small>
+    </main>
+  </body>
 </html>
+
