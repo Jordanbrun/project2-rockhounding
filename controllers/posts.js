@@ -33,7 +33,7 @@ router.post('/', async (req, res) =>{
     const foundRock = await Rock.findById(req.body.rockId);
     const foundState = await State.findById(req.body.stateId);
     const newPost = await Post.create(req.body);
-    Promise.all([foundUser, foundRock, foundState, newPost]);
+
     foundUser.posts.push(newPost);
     foundRock.posts.push(newPost);
     foundState.posts.push(newPost);
@@ -49,29 +49,49 @@ router.post('/', async (req, res) =>{
 })
 
 
-// //edit 
-// router.get('/:id/edit', (req, res) =>{
-//     Post.findById(req.params.id, (err, foundPost) =>{
-//         if(err){
-//             res.send(err);
-//         } else {
-//             res.render('posts/edit.ejs', {
-//                 post: foundPost
-//                 })
-//             }
-//         })
-//     })
+//edit 
+router.get('/:id/edit', async (req, res) =>{
+   try { 
+   	const allStates = await State.find({})
+   	const allRocks = await State.find({})
+   	const foundPost = await Post.findOne(req.params.id);
+
+   	res.render("posts/edit.ejs", {
+   		post: foundPost,
+   		states: allStates,
+   		rocks: allRocks
+   	})
+   } catch(err){
+   	console.log(err);
+   	res.send(err);
+   }
+    })
+
+//SHOW ROUTE FOR POSTS
+
+router.get('/:id', async (req, res) =>{
+
+	try {
+
+		const foundPost = await Post.findOne(req.params.id);
+		res.render("posts/show.ejs", {
+			posts: foundPost
+
+		})
+	} catch(err) {
+		console.log(err);
+		res.send(err)
+	}
+})
 
 
-// router.put('/:id', (req, res)=>{
-//     Post.findByIdAndUpdate(req.params.id, req.body, (err, response) =>{
-//         if(err){
-//             res.send(err);
-//         } else {
-//             res.redirect('/posts');
-//         }
-        
-//     })
-// })
+router.put('/:id', async (req, res)=>{
+	try {
+
+	} catch {
+		console.log(err);
+		res.send(err);
+	}
+})
 
 module.exports = router;

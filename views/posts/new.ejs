@@ -15,6 +15,17 @@
 	
 	<main>
 		<form>
+
+		<select name="stateId">  
+			<% for(let i = 0; i < states.length; i++) { %>
+			    <option value="<%=states[i]._id%>"><%=states[i].name%></option>
+			<% } %>
+		</select>
+		<select name="rockId">  
+			<% for(let i = 0; i < rocks.length; i++) { %>
+			    <option value="<%=rocks[i]._id%>"><%=rocks[i].name%></option>
+			<% } %>
+		</select>
 			<input type='text' name='title'><br>
 			<input type='textarea' name='body'><br>
 			<input type="text" name="location">

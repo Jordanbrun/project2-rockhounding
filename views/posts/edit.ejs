@@ -16,11 +16,16 @@
 	<main>
 	  <form>
 
-	  	  <!-- <select name="StateId">  -->
-	  	  	<!-- Not sure if we will need this. I think we should just associate it with that state rather than selecting form a drop down -->
-              <!-- <% for(let i = 0; i < states.length; i++) { %>
-                  <option value="<%=states[i]._id%>"><%=states[i].name%></option>
-              <% } %> -->
+	  	<select name="stateId">  
+	  	  	<% for(let i = 0; i < states.length; i++) { %>
+                 <option value="<%=states[i]._id%>"><%=states[i].name%></option>
+            <% } %>
+        </select>
+        <select name="rockId">  
+	  	<% for(let i = 0; i < rocks.length; i++) { %>
+       		 <option value="<%=rocks[i]._id%>"><%=rocks[i].name%></option>
+        <% } %>
+    	</select>
 		<input type='text' name='title' value='title'><br>
 		<input type='textarea' name='body' value='body'><br>
 		<input type="text" name="location" value='location'>
