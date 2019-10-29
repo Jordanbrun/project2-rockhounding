@@ -1,5 +1,5 @@
 const State = require("./models/state")
-//const Rock = require("../../models/rock");
+const Rock = require("./models/rock");
 const express = require("express");
 
 require("./db/db")
@@ -9,7 +9,7 @@ const stateSeed = async () => {
     console.log(states);
     console.log(states.length)
     if (states.length !== 0) {
-        return;
+        return true;
     } else {
 
 	    const stateArr = [
@@ -64,13 +64,45 @@ const stateSeed = async () => {
 	    {name: "Wisconsin"},
 	    {name: "Wyoming"}
 	    ]
+	    console.log(stateArr);
+	    await State.create(stateArr);
+	    
+	}
+}
 
-	    await State.create(stateArr, (err) => {
+
+const coloradoRockSeed = async () => {
+	const colorado = await State.findOne({"name": "Colorado"});
+    if (colorado.rocks !== "undefined" && colorado.rocks.length > 0){
+        return;
+    } else {
+
+	    const coloradoRockArr = [
+	    {name: "Petrified Wood",
+	     IMG: "./public/images/petrified.jpg"}, 
+	    {name: "Aquamarine",
+	     IMG: "./public/images/aquamarine.jpg"},
+	    {name: "Rhodochrosite",
+	     IMG: "./public/images/rhodochrosite.png"},
+	    {name: "Topaz",
+	     IMG: "./public/images/toapz.jpg"},
+	    {name: "Amazonite",
+	     IMG: "./public/images/amazonite.png"},
+	    {name: "Smoky Quartz",
+	     IMG: "./public/images/smokey-quartz.png"}
+	    ]
+	    console.log(colorado.rocks);
+
+	    console.log(coloradoRockArr);
+
+	     await Rock.create(coloradoRockArr, async (err, createdRocks) => {
 	    	if (err) {
 	    		console.log(err)
 	    	} else {
-	    		for (let i=1 ; i<arguments.length; i++) {
-	    			console.log(arguments[i]);
+	    		for (let i=0 ; i<createdRocks.length; i++) {
+	    			console.log(createdRocks[i]);
+	    			colorado.rocks.push(createdRocks[i])
+	    			await colorado.save();
 	    		}
 	    	}
 	    })
@@ -78,4 +110,13 @@ const stateSeed = async () => {
 	}
 }
 
-stateSeed();
+const seedAll = async () =>
+{
+	await stateSeed();
+	await coloradoRockSeed();
+}
+
+seedAll();
+
+
+
