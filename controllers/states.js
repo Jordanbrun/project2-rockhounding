@@ -20,6 +20,8 @@ router.get("/", async (req,res) => {
 	}
 })
 
+// If we dont want to go by name once we launch this live, we could run this to go by ID. 
+// I think going by name looks better.. Especially in the URL
 
 // router.get("/:id", async (req,res) => {
 // 	try {
@@ -40,10 +42,10 @@ router.get("/", async (req,res) => {
 router.get('/:name', async (req,res) => { // using name here for the show page. 
 	try {
 		const foundState = await State.findOne({name: req.params.name});
-		const allRocks = await Rock.find({state: foundState})
+		const allRocks = await Rock.findOne({rocks: req.params.rocks})
 		res.render('states/show.ejs', {
 			state: foundState,
-			allRocks
+			rock: allRocks
 		})
 	}
 	catch(err) {
