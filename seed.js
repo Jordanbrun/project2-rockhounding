@@ -1,4 +1,3 @@
-  
 const State = require("./models/state")
 const Rock = require("./models/rock");
 const express = require("express");
@@ -118,3 +117,6 @@ const seedAll = async () =>
 }
 
 seedAll();
+
+
+
