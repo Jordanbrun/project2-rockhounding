@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const State = require('../models/state.js');
-const Rock = require("../models/rock.js")
-const Post = require("../models/post.js")
+const Rock = require("../models/rock.js");
+const Post = require("../models/post.js");
 const Seed = require('../seed.js');
 
 
@@ -21,20 +21,35 @@ router.get("/", async (req,res) => {
 })
 
 
-router.get("/:id", async (req,res) => {
+// router.get("/:id", async (req,res) => {
+// 	try {
+// 		const foundState = await State.findById(req.params.id);
+// 		console.log(req.params.id)
+// 		const allRocks = await Rock.find({state: foundState})
+// 		res.render("states/show.ejs", {
+// 			state: foundState,
+// 			allRocks
+// 		})
+
+// 	} catch(err) {
+// 		res.send(err)
+// 	}
+// })
+
+//show state
+router.get('/:name', async (req,res) => { // using name here for the show page. 
 	try {
-		const foundState = await State.findById(req.params.id);
-		console.log(req.params.id)
+		const foundState = await State.findOne({name: req.params.name});
 		const allRocks = await Rock.find({state: foundState})
-		res.render("states/show.ejs", {
+		res.render('states/show.ejs', {
 			state: foundState,
 			allRocks
 		})
-
-	} catch(err) {
-		res.send(err)
 	}
-})
+	catch(err) {
+		res.send(err);
+	}
+});
 
 
 router.get("/:id/:idrocks", async (req,res) => {
