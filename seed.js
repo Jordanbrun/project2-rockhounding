@@ -79,17 +79,17 @@ const coloradoRockSeed = async () => {
 
 	    const coloradoRockArr = [
 	    {name: "Petrified Wood",
-	     IMG: "./public/images/petrified.jpg"}, 
+	     IMG: "petrified.jpg"}, 
 	    {name: "Aquamarine",
-	     IMG: "./public/images/aquamarine.jpg"},
+	     IMG: "aquamarine.jpg"},
 	    {name: "Rhodochrosite",
-	     IMG: "./public/images/rhodochrosite.png"},
+	     IMG: "rhodochrosite.png"},
 	    {name: "Topaz",
-	     IMG: "./public/images/toapz.jpg"},
+	     IMG: "topaz.jpg"},
 	    {name: "Amazonite",
-	     IMG: "./public/images/amazonite.png"},
+	     IMG: "amazonite.png"},
 	    {name: "Smoky Quartz",
-	     IMG: "./public/images/smokey-quartz.png"}
+	     IMG: "smokey-quartz.png"}
 	    ]
 	    console.log(colorado.rocks);
 
