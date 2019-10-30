@@ -56,11 +56,16 @@ router.get('/:name', async (req,res) => { // using name here for the show page.
 });
 
 
-router.get("/:id/:idrocks", async (req,res) => {
+router.get("/:name/:idrocks", async (req,res) => {
 	try {
-		const foundState = await State.findOne(req.params.name);
-		const foundRock = await Rock.findById(req.params.idrocks)
+		const foundState = await State.findOne({name: req.params.name});
+		console.log(foundState)
+		const foundRock = await Rock.findById(req.params.idrocks);
+		console.log(foundRock);
+		const posts = await Post.find({});
+		console.log(posts)
 		const allPosts = await Post.find({states: foundState, rocks: foundRock})
+		console.log(allPosts);
 		res.render("states/show2.ejs", {
 			state: foundState,
 			rock: foundRock,

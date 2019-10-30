@@ -3,8 +3,13 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 
+
+router.get('/', (req, res) => {
+	res.render('registration/index.ejs');
+});
+
 router.get("/new", (req, res) => {
-	res.render("registration.ejs")
+	res.render("registration/index.ejs")
 });
 
 router.post("/registration", async (req, res) => {
