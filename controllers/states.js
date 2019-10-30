@@ -42,10 +42,12 @@ router.get("/", async (req,res) => {
 router.get('/:name', async (req,res) => { // using name here for the show page. 
 	try {
 		const foundState = await State.findOne({name: req.params.name});
-		const allRocks = await Rock.findOne({rocks: req.params.rocks})
+		const allRocks = await Rock.find({states: foundState});
+		console.log(foundState.rocks)
+		console.log(allRocks);
 		res.render('states/show.ejs', {
 			state: foundState,
-			rock: allRocks
+			rocks: allRocks
 		})
 	}
 	catch(err) {
@@ -56,7 +58,7 @@ router.get('/:name', async (req,res) => { // using name here for the show page.
 
 router.get("/:id/:idrocks", async (req,res) => {
 	try {
-		const foundState = await State.findById(req.params.id);
+		const foundState = await State.findOne(req.params.name);
 		const foundRock = await Rock.findById(req.params.idrocks)
 		const allPosts = await Post.find({states: foundState, rocks: foundRock})
 		res.render("states/show2.ejs", {
