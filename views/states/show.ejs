@@ -23,7 +23,8 @@
 		 </div>
 		 <div class="zone blue grid-wrapper">
 		  	<% for(let i = 0; i < rocks.length; i++){ %>
-		 <div class="box zone"><img class="portfolio" src="/images/<%=rocks[i].IMG %>"></div>
+		 <div class="box zone"><span class='rockName'><%=rocks[i].name%></span><img class="portfolio" src="/images/<%=rocks[i].IMG %>" name='<%=rocks[i].name%>'></div>
+		
 		    <% } %>
 		   </div>
 		
@@ -33,7 +34,4 @@
 
 </body>
 </html>
-
-
-
 
