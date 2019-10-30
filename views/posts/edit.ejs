@@ -16,22 +16,11 @@
 	<main>
 
 	  <form action="/posts/<%=post._id%>?_method=PUT" method="post">
-
-	  	<select name="stateId">  
-	  	  	<% for(let i = 0; i < states.length; i++) { %>
-                 <option value="<%=states[i]._id%>"><%=states[i].name%></option>
-            <% } %>
-        </select>
-        <select name="rockId">  
-	  	<% for(let i = 0; i < rocks.length; i++) { %>
-       		 <option value="<%=rocks[i]._id%>"><%=rocks[i].name%></option>
-        <% } %>
-    	</select>
-		<input type='text' name='title' value='title'><br>
-		<input type='textarea' name='body' value='body'><br>
-		<input type="text" name="location" value='location'>
-		<input type='text' name='IMG' value='IMG'>
-
+		<input type='text' name='title' value='<%=post.title%>'><br>
+		<input type="text" name="location" value='<%=post.location%>'><br>
+		<input type='text' name='IMG' value='<%=post.IMG%>'><br>
+		<input type='textarea' name='body' value='<%=post.body%>'><br>
+		<input type="submit" value="Update Post"/>
 	  </form>
 	</main>
 

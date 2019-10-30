@@ -9,8 +9,10 @@ const Rock = require("../models/rock.js");
 router.get('/', async (req, res)=>{
 
   try {
-
-    res.render('posts/index.ejs');
+  	const foundPosts = await Post.find({});
+    res.render('posts/index.ejs',{
+    	posts: foundPosts
+    });
   } catch(err){
   	console.log(err);
     res.send(err);
@@ -53,7 +55,7 @@ router.post('/', async (req, res) =>{
     await foundRock.posts.push(newPost);
     await foundState.posts.push(newPost);
     await newPost.states.push(foundState);
-    await newPost.rock.push(foundRock);
+    await newPost.rocks.push(foundRock);
 
     //await foundUser.save();
     await foundRock.save();
@@ -117,32 +119,35 @@ router.put('/:id', async (req, res)=>{
 	try {
 
 		const findUpdatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true});
-		//const findFoundUser = User.findOne({'posts': req.params.id });
-	
-		// if(foundAuthor._id.toString() != req.body.authorId){
-
-	
-		//       foundAuthor.articles.remove(req.params.id);
-		//       await foundAuthor.save();
-		//       const newAuthor = await Author.findById(req.body.authorId);
-		//       newAuthor.articles.push(updatedArticle);
-		//       const savedNewAuthor = await newAuthor.save();
-		      
-
-
-		      res.redirect('/posts/' + req.params.id);
-
-
-		// } else {
-		//   console.log('hitting, else')
-		//   res.redirect('/articles/' + req.params.id);
-
-		// }
+		res.redirect('/posts/' + req.params.id);
 	} catch {
 		console.log(err);
 		res.send(err);
 	}
 
+});
+
+router.delete('/:id', async (req, res)=>{
+  try {
+
+    const deletePost = await Post.findByIdAndRemove(req.params.id);
+    const findState = await State.findOne({'posts': req.params.id});
+    const findRock = await Rock.findOne({'posts': req.params.id});
+
+    const [deletedArticleResponse, foundState, foundRock] = await Promise.all([deletePost, findState, findRock]);
+    console.log(foundState);
+    console.log(foundRock);
+    foundState.posts.remove(req.params.id);
+    foundRock.posts.remove(req.params.id);
+    await foundState.save()
+    await foundRock.save()
+    console.log(foundState);
+    console.log(foundRock)
+    res.redirect('/posts')
+  } catch(err){
+    console.log(err)
+    res.send(err);
+  }
 });
 
 module.exports = router;
