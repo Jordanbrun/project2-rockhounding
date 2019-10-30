@@ -1,0 +1,150 @@
+/*States Page
+*/
+body {
+    background: url(https://i.imgur.com/cDrCuJl.jpg) no-repeat center center fixed; 
+  background-color: grey;
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
+
+
+
+}
+
+.box {
+  height: 350px;
+  width: 65%;
+
+}
+
+
+}
+
+
+.zone {
+   /* padding:30px 50px;
+    margin:40px 60px;*/
+    cursor:pointer;
+    /*display:inline-block;*/
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+
+
+
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+/*nav*/
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    font-size: 0.7em;
+    margin: 0;
+
+}
+
+.push {
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+ .main-nav {
+    font-size: .5em;
+    padding: 0;
+ }
+}
+
+li {
+    padding: 20px;
+}
+
+a {
+    color: #f5f5f6;
+    text-decoration: none;
+}
+
+/* COVER */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+/* PROJECT GRID*/
+
+.homepage-body {
+
+}
+
+.box > img {
+    width: 100%;
+}
+
+/*.box {
+    background-color: gray;
+    padding: 100px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block
+    background-size: cover;
+}
+*/
+/*.box {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+*/
+
+.box {
+  color: white;
+  background: grey;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}   
+
+footer {
+    text-align: center;
+}
+
+.green{
+    background: #B0B0B0; /* Old browsers */
+    background: -moz-linear-gradient(top, #B0B0B0 0%, #A9A18C 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#816C5B), color-stop(100%,#A9A18C)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #B0B0B0 0%,#A9A18C 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #B0B0B0 0%,#A9A18C 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #B0B0B0 0%,#A9A18C 100%); /* IE10+ */
+    background: linear-gradient(top, #B0B0B0 0%,#A9A18C 100%); 
+    color: #B0B0B0;
+    font-size: 35px;
+    font-family: 'Anton', sans-serif;
+
+}
+
+/***********************************************************************
+ *  Red Background
+ **********************************************************************/
+.red{
+  
+
+}
