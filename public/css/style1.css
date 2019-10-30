@@ -83,6 +83,7 @@ a {
 
 .box > img {
     width: 100%;
+    height: 200px;
 }
 
 .box {
@@ -93,7 +94,10 @@ a {
 
 footer {
     text-align: center;
+    bottom: 0;
+    width: 100% 
 }
+
 
 .green{
     background: #B0B0B0 ; /* Old browsers */
