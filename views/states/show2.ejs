@@ -4,7 +4,15 @@
 	<title></title>
 </head>
 <body>
-<h1>THIS IS LIST OF POST TITLES ASSOCIATED WITH STATE AND ROCKS</h1>
-<p><=%posts%></p>
-</body>
+		<h1><%=rock.name %></h1>
+		<h2></h2>
+		<ul>
+				 <% for(let i = 0; i < posts.length; i++){ %>
+				<li>
+					<a href="/posts/<%=posts[i].id%>"><%=posts[i].title%></a>
+				</li>
+				<% } %>
+			</li>
+		</ul>
+	</body>
 </html>
