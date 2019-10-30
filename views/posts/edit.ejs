@@ -14,7 +14,8 @@
 	</header>
 	
 	<main>
-	  <form>
+
+	  <form action="/posts/<%=post._id%>?_method=PUT" method="post">
 
 	  	<select name="stateId">  
 	  	  	<% for(let i = 0; i < states.length; i++) { %>

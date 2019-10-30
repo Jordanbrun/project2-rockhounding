@@ -14,7 +14,9 @@
 	</header>
 	
 	<main>
-		<form>
+
+		<form action="/posts" method="post">
+
 
 		<select name="stateId">  
 			<% for(let i = 0; i < states.length; i++) { %>
@@ -26,10 +28,13 @@
 			    <option value="<%=rocks[i]._id%>"><%=rocks[i].name%></option>
 			<% } %>
 		</select>
-			<input type='text' name='title'><br>
-			<input type='textarea' name='body'><br>
-			<input type="text" name="location">
-			<input type='text' name='IMG'>
+			Title: <input type='text' name='title'><br>
+			Location: <input type="text" name="location"><br>
+			Image Link: <input type='text' name='IMG'><br>
+
+			Post Body:<textarea name="body"></textarea><br/>
+          <input type="submit" value="Publish Post"/>
+
 		</form>
 	</main>
 
