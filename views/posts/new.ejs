@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rockhounding</title>
+</head>
+<body>
+	<header>
+	<h1>Create a post</h1>
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+		</ul>
+	</header>
+	
+	<main>
+		<form action="/posts" method="post">
+
+		<select name="stateId">  
+			<% for(let i = 0; i < states.length; i++) { %>
+			    <option value="<%=states[i]._id%>"><%=states[i].name%></option>
+			<% } %>
+		</select>
+		<select name="rockId">  
+			<% for(let i = 0; i < rocks.length; i++) { %>
+			    <option value="<%=rocks[i]._id%>"><%=rocks[i].name%></option>
+			<% } %>
+		</select>
+			Title: <input type='text' name='title'><br>
+			Location: <input type="text" name="location"><br>
+			Image Link: <input type='text' name='IMG'><br>
+
+			Post Body:<textarea name="body"></textarea><br/>
+          <input type="submit" value="Publish Post"/>
+		</form>
+	</main>
+
+</body>
+</html>

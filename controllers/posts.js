@@ -6,6 +6,16 @@ const User = require("../models/user.js");
 const Rock = require("../models/rock.js");
 
 
+router.get('/', async (req, res)=>{
+
+  try {
+
+    res.render('articles/index.ejs');
+  } catch(err){
+  	console.log(err);
+    res.send(err);
+  }
+
 //new route
 router.get('/new', async (req, res) =>{
     try{
@@ -29,24 +39,30 @@ router.get('/new', async (req, res) =>{
 // create
 router.post('/', async (req, res) =>{
     try{
-    const foundUser = await User.findById(req.body.userId);
+    //const foundUser = await User.findById(req.body.userId);
     const foundRock = await Rock.findById(req.body.rockId);
     const foundState = await State.findById(req.body.stateId);
     const newPost = await Post.create(req.body);
 
-    foundUser.posts.push(newPost);
+    //foundUser.posts.push(newPost);
+
     foundRock.posts.push(newPost);
     foundState.posts.push(newPost);
-    await foundUser.save();
+    newPost.states.push(foundState);
+    newPost.rock.push(foundRock);
+
+    //await foundUser.save();
     await foundRock.save();
     await foundState.save();
+
     res.redirect('/posts');
 
-    } catch {
+    } catch(err) {
+    	console.log(err)
         res.send(err);
     }
 
-})
+});
 
 
 //edit 
@@ -65,7 +81,7 @@ router.get('/:id/edit', async (req, res) =>{
    	console.log(err);
    	res.send(err);
    }
-    })
+})
 
 //SHOW ROUTE FOR POSTS
 
