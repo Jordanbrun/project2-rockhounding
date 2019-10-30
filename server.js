@@ -5,6 +5,8 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 require('./db/db');
 
+app.use(express.static('public'));
+
 
 app.use(session({
 	secret: 'This is our secret string for passwords. A ha ha.',
@@ -14,6 +16,9 @@ app.use(session({
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
+
+
+
 
 const statesController = require('./controllers/states.js');
 app.use('/states', statesController);
