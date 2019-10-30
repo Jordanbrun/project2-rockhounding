@@ -5,6 +5,16 @@
 </head>
 <body>
 <p> Your Post has been created!
+
+	Listing all posts here just to see what is going on
 </p>
+
+<ul>
+<% for(let i = 0; i < posts.length; i++){ %>
+          <li>
+            <a href="/posts/<%=posts[i]._id%>"><%=posts[i]%></a>
+          </li>
+        <% } %>
+       </ul>
 </body>
 </html>
