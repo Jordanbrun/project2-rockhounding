@@ -10,11 +10,12 @@ router.get('/', async (req, res)=>{
 
   try {
 
-    res.render('articles/index.ejs');
+    res.render('posts/index.ejs');
   } catch(err){
   	console.log(err);
     res.send(err);
   }
+ });
 
 //new route
 router.get('/new', async (req, res) =>{
@@ -34,7 +35,7 @@ router.get('/new', async (req, res) =>{
     	res.send(err);
     }    
             
-})
+});
 
 // create
 router.post('/', async (req, res) =>{
@@ -46,14 +47,19 @@ router.post('/', async (req, res) =>{
 
     //foundUser.posts.push(newPost);
 
-    foundRock.posts.push(newPost);
-    foundState.posts.push(newPost);
-    newPost.states.push(foundState);
-    newPost.rock.push(foundRock);
+    //ask about pushing when it comes to creating a new POST **********
+
+    // look up .populate()
+
+    await foundRock.posts.push(newPost);
+    await foundState.posts.push(newPost);
+    await newPost.states.push(foundState);
+    await newPost.rock.push(foundRock);
 
     //await foundUser.save();
     await foundRock.save();
     await foundState.save();
+    await newPost.save();
 
     res.redirect('/posts');
 
@@ -81,7 +87,7 @@ router.get('/:id/edit', async (req, res) =>{
    	console.log(err);
    	res.send(err);
    }
-})
+});
 
 //SHOW ROUTE FOR POSTS
 
@@ -92,13 +98,12 @@ router.get('/:id', async (req, res) =>{
 		const foundPost = await Post.findOne(req.params.id);
 		res.render("posts/show.ejs", {
 			posts: foundPost
-
 		})
 	} catch(err) {
 		console.log(err);
 		res.send(err)
 	}
-})
+});
 
 
 router.put('/:id', async (req, res)=>{
@@ -132,6 +137,6 @@ router.put('/:id', async (req, res)=>{
 		console.log(err);
 		res.send(err);
 	}
-})
+});
 
 module.exports = router;
