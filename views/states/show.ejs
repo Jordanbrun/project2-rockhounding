@@ -11,9 +11,12 @@
 		<h1><%=state.name %></h1>
 		<h2></h2>
 		<ul>
-			<li>
-				<%=rock.name%>
-				<img src='<%=rock.IMG%>'>
+				 <% for(let i = 0; i < rocks.length; i++){ %>
+				<li>
+					<a href="/states/<%=state.name%>/<%=rocks[i].id%>"><%=rocks[i].name%></a>
+				</li>
+				<img src="<%=rocks[i].IMG%>">
+				<% } %>
 			</li>
 		</ul>
 	</body>

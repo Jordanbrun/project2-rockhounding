@@ -103,7 +103,15 @@ const coloradoRockSeed = async () => {
 	    			console.log(createdRocks[i]);
 	    			colorado.rocks.push(createdRocks[i])
 	    			await colorado.save();
+	    			await createdRocks[i].save();
 	    		}
+
+	    		for (let i=0; i<createdRocks.length; i++) {
+	    			createdRocks[i].states.push(colorado);
+	    			await createdRocks[i].save();
+	    			console.log(createdRocks[i]);
+	    		}
+
 	    	}
 	    })
 	    

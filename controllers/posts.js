@@ -47,7 +47,6 @@ router.post('/', async (req, res) =>{
 
     //foundUser.posts.push(newPost);
 
-    //ask about pushing when it comes to creating a new POST **********
 
     // look up .populate()
 
@@ -78,7 +77,7 @@ router.get('/:id/edit', async (req, res) =>{
    try { 
    	const allStates = await State.find({})
    	const allRocks = await State.find({})
-   	const foundPost = await Post.findOne(req.params.id);
+   	const foundPost = await Post.findById(req.params.id);
 
    	res.render("posts/edit.ejs", {
    		post: foundPost,
@@ -100,7 +99,7 @@ router.get('/:id', async (req, res) =>{
 
 	try {
 
-		const foundPost = await Post.findOne(req.params.id);
+		const foundPost = await Post.findById(req.params.id);
 		res.render("posts/show.ejs", {
 			posts: foundPost
 
