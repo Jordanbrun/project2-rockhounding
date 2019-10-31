@@ -1,7 +1,7 @@
 const State = require("./models/state")
 const Rock = require("./models/rock");
 const express = require("express");
-
+require('dotenv').config();
 require("./db/db")
 
 const stateSeed = async () => {
@@ -72,51 +72,99 @@ const stateSeed = async () => {
 
 
 const coloradoRockSeed = async () => {
-	const colorado = await State.findOne({"name": "Colorado"});
-    if (colorado.rocks !== "undefined" && colorado.rocks.length > 0){
-        return;
-    } else {
+	try { 
+		const colorado = await State.findOne({"name": "Colorado"});
+	    if (colorado.rocks !== "undefined" && colorado.rocks.length > 0){
+	        return;
+	    } else {
 
-	    const coloradoRockArr = [
-	    {name: "Petrified Wood",
-	     IMG: "petrified.jpg"}, 
-	    {name: "Aquamarine",
-	     IMG: "aquamarine.jpg"},
-	    {name: "Rhodochrosite",
-	     IMG: "rhodochrosite.jpg"},
-	    {name: "Topaz",
-	     IMG: "topaz.jpg"},
-	    {name: "Amazonite",
-	     IMG: "amazonite.jpg"},
-	    {name: "Smoky Quartz",
-	     IMG: "smokey-quartz.jpg"}
-	    ]
-	    console.log(colorado.rocks);
+		    const coloradoRockArr = [
+		    {name: "Petrified Wood",
+		     IMG: "petrified.jpg"}, 
+		    {name: "Aquamarine",
+		     IMG: "aquamarine.jpg"},
+		    {name: "Rhodochrosite",
+		     IMG: "rhodochrosite.jpg"},
+		    {name: "Topaz",
+		     IMG: "topaz.jpg"},
+		    {name: "Amazonite",
+		     IMG: "amazonite.jpg"},
+		    {name: "Smoky Quartz",
+		     IMG: "smokey-quartz.jpg"}
+		    ]
+		    console.log(colorado.rocks);
 
-	    console.log(coloradoRockArr);
+		    console.log(coloradoRockArr);
 
-	     await Rock.create(coloradoRockArr, async (err, createdRocks) => {
-	    	if (err) {
-	    		console.log(err)
-	    	} else {
-	    		for (let i=0 ; i<createdRocks.length; i++) {
-	    			console.log(createdRocks[i]);
-	    			colorado.rocks.push(createdRocks[i])
-	    			await colorado.save();
-	    			await createdRocks[i].save();
-	    		}
+		    const createdRocks = await Rock.create(coloradoRockArr)
+		    		for (let i=0 ; i<createdRocks.length; i++) {
+		    			console.log(createdRocks[i]);
+		    			colorado.rocks.push(createdRocks[i])
+		    			await colorado.save();
+		    			await createdRocks[i].save();
+		    		}
 
-	    		for (let i=0; i<createdRocks.length; i++) {
-	    			createdRocks[i].states.push(colorado);
-	    			await createdRocks[i].save();
-	    			console.log(createdRocks[i]);
-	    		}
-
-	    	}
-	    })
-	    
-	}
+		    		for (let i=0; i<createdRocks.length; i++) {
+		    			createdRocks[i].states.push(colorado);
+		    			await createdRocks[i].save();
+		    			console.log(createdRocks[i]);
+		    		}
+		    console.log(createdRocks)
+		    
+		}
+	} catch (err) {
+		console.log(err);
+		res.send(err);
+	}	
 }
+
+// const newMexico = async () => {
+// 	const newMexico = await State.findOne({"name": "New Mexico"});
+//     if (newMexico.rocks !== "undefined" && newMexico.rocks.length > 0){
+//         return;
+//     } else {
+
+// 	    const coloradoRockArr = [
+// 	    {name: "Petrified Wood",
+// 	     IMG: "petrified.jpg"}, 
+// 	    {name: "Aquamarine",
+// 	     IMG: "aquamarine.jpg"},
+// 	    {name: "Rhodochrosite",
+// 	     IMG: "rhodochrosite.jpg"},
+// 	    {name: "Topaz",
+// 	     IMG: "topaz.jpg"},
+// 	    {name: "Amazonite",
+// 	     IMG: "amazonite.jpg"},
+// 	    {name: "Smoky Quartz",
+// 	     IMG: "smokey-quartz.jpg"}
+// 	    ]
+// 	    console.log(newMexico.rocks);
+
+// 	    console.log(newMexicoRockArr);
+
+// 	     await Rock.create(newMexicoRockArr, async (err, createdRocks) => {
+// 	    	if (err) {
+// 	    		console.log(err)
+// 	    	} else {
+// 	    		for (let i=0 ; i<createdRocks.length; i++) {
+// 	    			console.log(createdRocks[i]);
+// 	    			newMexico.rocks.push(createdRocks[i])
+// 	    			await newMexico.save();
+// 	    			await createdRocks[i].save();
+// 	    		}
+
+// 	    		for (let i=0; i<createdRocks.length; i++) {
+// 	    			createdRocks[i].states.push(newMexico);
+// 	    			await createdRocks[i].save();
+// 	    			console.log(createdRocks[i]);
+// 	    		}
+
+// 	    	}
+// 	    })
+	    
+// 	}
+// }
+
 
 const seedAll = async () =>
 {
