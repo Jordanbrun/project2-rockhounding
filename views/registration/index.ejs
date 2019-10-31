@@ -1,19 +1,39 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
+      <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-  <h1>Rockhounding login page. This is def going to change. But whats up Jordan and Mallory</h1>
+  <nav class="zone green">
+      <ul class="main-nav">
+          <li><a href="/">About</a></li>
+          <li><a href="/rocks">Rocks</a></li>
+                    <li><a href="/states">States</a></li>
 
+          <li class="push"><a href="/registration">Login & registration</a></li>
+      </ul>
+</nav>
+
+ <div class="form1">
  <h2>Login</h2>
+
+  <div class="centered">
+  <form action="/auth/login" method="POST">
   <form action="/users/login" method="POST">
+
     <input type="text" name="username" placeholder="username"><br>
     <input type="email" name="email" placeholder="email"><br>
     <input type="password" name="password" placeholder="password"><br>
-    <button type="submit">Login Cookie Monsta</button>
+    <button type="submit">Login</button>
   </form>
+
+
+
+
 
   <h2>Registration</h2>
   <form action="/users/registration" method="POST">
@@ -22,5 +42,10 @@
     <input type="password" name="password" placeholder="password"><br>
     <button type="submit">Register</button>
   </form>
+</div>
 </body>
 </html>
+
+
+
+
