@@ -6,6 +6,7 @@ const session = require('express-session');
 require('dotenv').config();
 require('./db/db');
 
+
 app.use(session({
 	secret: 'This is our secret string for passwords. A ha ha.',
 	resave: false,
@@ -51,5 +52,6 @@ app.get('/about', (req, res) => {
 
 app.listen(process.env.PORT, () => {
   console.log('listening on port 3000');
+
 });
 
