@@ -5,10 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 require('dotenv').config();
 require('./db/db');
-<<<<<<< HEAD
 
-=======
->>>>>>> 1a849ae052847c7a9b2b4529970fc8b6e6e5ae69
 
 app.use(session({
 	secret: 'This is our secret string for passwords. A ha ha.',
@@ -57,8 +54,6 @@ app.get('/about', (req, res) => {
 
 app.listen(process.env.PORT, () => {
   console.log('listening on port 3000');
-<<<<<<< HEAD
+
 });
-=======
-});
->>>>>>> 1a849ae052847c7a9b2b4529970fc8b6e6e5ae69
+

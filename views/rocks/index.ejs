@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Rockhounding</title>
-	<link rel="stylesheet" type="text/css" href="css/states-style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style1.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
 		<header>
@@ -15,15 +16,18 @@
 			</nav>
 		</header>
 		<main>
-		<ul>
+	<!-- 	<ul>
 		<% for(let i = 0; i < rocks.length; i++){ %>
           <li>
             <a href="/rocks/<%=rocks[i]._id%>"><%=rocks[i].name%></a>
           </li>
-        <% } %>
-       </ul>
+        <% } %> -->
+       <!-- </ul> -->
+        <div class="container zone red">
+		  	<h1>Rock Index</h1>
+		 </div>
        
-       	 <!-- <div class="zone blue grid-wrapper">
+       	 <div class="zone blue grid-wrapper">
 			<% for(let i = 0; i < rocks.length; i++){ %>
 			<a href='/rocks' class='rockName'><%=rocks[i].name%>
 		 	<div class="box zone">
@@ -31,7 +35,7 @@
 			 </div>
 			</a>
 			<% } %>
-		 </div> -->
+		 </div>
 		
 
 
@@ -39,3 +43,6 @@
        </main>
 </body>
 </html>
+
+
+
