@@ -16,10 +16,10 @@
 	<main>
 
 	  <form action="/posts/<%=post._id%>?_method=PUT" method="post">
-		<input type='text' name='title' value='<%=post.title%>'><br>
-		<input type="text" name="location" value='<%=post.location%>'><br>
-		<input type='text' name='IMG' value='<%=post.IMG%>'><br>
-		<input type='textarea' name='body' value='<%=post.body%>'><br>
+		Title: <input type='text' name='title' value='<%=post.title%>'><br>
+		Location: <input type="text" name="location" value='<%=post.location%>'><br>
+		Image: <input type='text' name='IMG' value='<%=post.IMG%>'><br>
+		Text: <input type='textarea' name='body' value='<%=post.body%>'><br>
 		<input type="submit" value="Update Post"/>
 	  </form>
 	</main>

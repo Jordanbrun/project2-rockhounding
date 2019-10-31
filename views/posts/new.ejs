@@ -2,19 +2,29 @@
 <html>
 <head>
 	<title>Rockhounding</title>
+	<link rel="stylesheet" type="text/css" href="../css/posts.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header>
-	<h1>Create a post</h1>
-		<ul>
-			<li>
-				<a href="/">Home</a>
-			</li>
-		</ul>
+	
+<nav class="zone green">
+      <ul class="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/states">States</a></li>
+          <li><a href="/rocks">Rocks</a></li>
+          <li><a href='/registration'>Login and Register</a></li>
+          <li class="push"><a href="/about">About</a></li>
+          <li> 
+            
+      </ul>
+</nav>
 	</header>
 	
 	<main>
+<h1>Create a post</h1>
 
+<div class='post'>
 		<form action="/posts" method="post">
 
 
@@ -27,7 +37,7 @@
 			<% for(let i = 0; i < rocks.length; i++) { %>
 			    <option value="<%=rocks[i]._id%>"><%=rocks[i].name%></option>
 			<% } %>
-		</select>
+		</select><br>
 			Title: <input type='text' name='title'><br>
 			Location: <input type="text" name="location"><br>
 			Image Link: <input type='text' name='IMG'><br>
@@ -36,6 +46,7 @@
           <input type="submit" value="Publish Post"/>
 
 		</form>
+</div>
 	</main>
 
 </body>
