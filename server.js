@@ -38,7 +38,6 @@ app.use("/registration", registrationController);
 
 app.get('/', (req, res) => {
 
-
 	res.render('index.ejs', {
 	logOut: req.session.logOutMsg, 
 	loggedIn: req.session.logged,
@@ -46,7 +45,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-
 
 	res.render('about.ejs');
 });
