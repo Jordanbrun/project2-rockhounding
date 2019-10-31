@@ -1,36 +1,81 @@
-const express = require("express"); 
+const express = require('express');
 const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 
 
-router.get('/', (req, res) => {
-	res.render('registration/index.ejs');
+router.post('/login', async (req, res) => {
+
+  
+  // try {
+    const foundUser = await User.findOne({username: req.body.username});
+    
+    if(foundUser){
+
+        
+        if(bcrypt.compareSync(req.body.password, foundUser.password)){
+
+          req.session.message = '';
+         
+          req.session.username = foundUser.username;
+          req.session.logged   = true;
+
+          res.redirect('/')
+        } else {
+            
+           req.session.message = 'Username or password is incorrect';
+           res.redirect('/');
+        }
+    } else {
+
+      req.session.message = 'Username or password is incorrect';
+      res.redirect('/');
+      
+	 }
+  // } catch(err){
+  //   res.send(err);
+  // }
 });
 
-router.get("/new", (req, res) => {
-	res.render("registration/index.ejs")
-});
 
-router.post("/registration", async (req, res) => {
-	try {
-		const hashedPassword = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-		const newUser = {
-			username: req.body.username,
-			password: hashedPassword,
-			email: req.body.email
-		}
+router.get('/logout', (req, res) => {
 
-		const createdUser = await User.create(newUser);
-		req.session.username = createdUser.username;
-		req.session.logged = true;
-
-		res.redirect("/")
-	} catch(err) {
-		res.send(err);
-	}
+  req.session.destroy((err) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.redirect('/');
+    }
+  })
 
 })
+
+
+router.post("/registration", async (req, res) => {
+  
+  const password = req.body.password
+  const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+
+
+  const userDbEntry = {};
+
+
+  userDbEntry.username = req.body.username;
+  userDbEntry.password = passwordHash;
+  userDbEntry.email = req.body.email;
+
+  const createdUser = await User.create(userDbEntry);
+  console.log(createdUser)
+
+  req.session.username = createdUser.username;
+  req.session.logged = true;
+  res.redirect("/");
+
+
+})
+
+
+
 
 
 

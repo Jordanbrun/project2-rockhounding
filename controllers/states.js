@@ -6,7 +6,7 @@ const Post = require("../models/post.js");
 const Seed = require('../seed.js');
 
 
-
+//INDEX 
 router.get("/", async (req,res) => {
 	try {
 		const allStates = await State.find({});
@@ -20,26 +20,8 @@ router.get("/", async (req,res) => {
 	}
 })
 
-// If we dont want to go by name once we launch this live, we could run this to go by ID. 
-// I think going by name looks better.. Especially in the URL
-
-// router.get("/:id", async (req,res) => {
-// 	try {
-// 		const foundState = await State.findById(req.params.id);
-// 		console.log(req.params.id)
-// 		const allRocks = await Rock.find({state: foundState})
-// 		res.render("states/show.ejs", {
-// 			state: foundState,
-// 			allRocks
-// 		})
-
-// 	} catch(err) {
-// 		res.send(err)
-// 	}
-// })
-
-//show state
-router.get('/:name', async (req,res) => { // using name here for the show page. 
+//SHOW ROUTE
+router.get('/:name', async (req,res) => {  
 	try {
 		const foundState = await State.findOne({name: req.params.name});
 		const allRocks = await Rock.find({states: foundState});
@@ -55,7 +37,7 @@ router.get('/:name', async (req,res) => { // using name here for the show page.
 	}
 });
 
-
+//SHOW2 ROUTE
 router.get("/:name/:idrocks", async (req,res) => {
 	try {
 		const foundState = await State.findOne({name: req.params.name});
