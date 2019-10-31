@@ -7,7 +7,8 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;}
+  background-size: cover;
+}
 
 .zone {
    /* padding:30px 50px;
@@ -20,8 +21,17 @@ body {
     border:1px solid #bbb;
     transition: all 0.3s linear;
 
+}
 
+h1 {
+    font-size: 4em;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
 
+.rockName {
+    /*font-size: 12px;*/
+    text-align: center;
 }
 
 .zone:hover {
@@ -83,7 +93,7 @@ a {
 
 .box > img {
     width: 100%;
-    height: 100%;
+    height: 200px;
 }
 
 .box {
@@ -94,7 +104,10 @@ a {
 
 footer {
     text-align: center;
+    bottom: 0;
+    width: 100% 
 }
+
 
 .green{
     background: #B0B0B0 ; /* Old browsers */

@@ -1,58 +1,43 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title>Rockhounding</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-	<header>
-		<a href="/">Home</a><br>
-		<a href='/states'>States Map</a>
-	</header>
-	<body>
-		<h1><%=state.name %></h1>
-		<h2></h2>
-		<ul>
-				 <% for(let i = 0; i < rocks.length; i++){ %>
-				<li>
-					<a href="/states/<%=state.name%>/<%=rocks[i].id%>"><%=rocks[i].name%></a>
-				</li>
-				<img src="<%=rocks[i].IMG%>">
-				<% } %>
-			</li>
-		</ul>
-	</body>
-</html> -->
-
 
 <head>
 	<title>Rockhounding</title>
 	<link rel="stylesheet" type="text/css" href="../css/style1.css">
 	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<header>
-  <nav class="zone green">
-      <ul class="main-nav">
-      	  <li><a href='/'>Home</a></li>	
-          <li><a href="/states">States</a></li>
-          <li class="push"><a href="/registration">Login & Registration</a></li>
-      </ul>
-</nav>
-</header>
-<main>
-  <div class="container zone red">
-  	<h1><%= state.name%></h1>
-  </div>
-  <div class="zone blue grid-wrapper">
+  		<nav class="zone green">
+	      <ul class="main-nav">
+	      	  <li><a href='/'>Home</a></li>	
+	          <li><a href="/states">States</a></li>
+	          <li><a href='/rocks'>Rocks</a></li>
+	          <li class="push"><a href="/registration">Login & Register</a></li>
+	      </ul>
+		</nav>
+	</header>
 
-        <div class="box zone"><img class="portfolio" src=""></div>
-      <div class="box zone"><img class="portfolio" src=""></div>
-      <div class="box zone"><img class="portfolio" src=""></div>
-      <div class="box zone"><img class="portfolio" src=""></div>
-      <div class="box zone"><img class="portfolio" src=""></div>
-      <div class="box zone"><img class="portfolio" src=""></div>
-   </div>
-</main>
+	<main>
+		 <div class="container zone red">
+		  	<h1><%= state.name%></h1>
+		 </div>
+
+
+		 <div class="zone blue grid-wrapper">
+			<% for(let i = 0; i < rocks.length; i++){ %>
+			<a href="/states/<%=state.name%>/<%=rocks[i].id%>" class='rockName'><%=rocks[i].name%>
+		 	<div class="box zone"> 
+		 		<img class="portfolio" src="/images/<%=rocks[i].IMG %>" name='<%=rocks[i].name%>'>
+			 </div>
+			</a>
+			<% } %>
+		 </div>
+		
+
+	</main>
+
   <footer class="zone yellow"> Copyright 2019</footer>
+
 </body>
 </html>
+

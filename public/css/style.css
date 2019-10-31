@@ -3,9 +3,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;}
-
-
+  background-size: cover;
 }
 
 
@@ -19,7 +17,6 @@ body {
     border-radius:4px;
     border:1px solid #bbb;
     transition: all 0.3s linear;
-
 
 
 }

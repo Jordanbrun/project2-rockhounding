@@ -1,17 +1,14 @@
 body {
-    background: url(https://i.imgur.com/Hw0XMOG.jpg) no-repeat center center fixed; 
- 
--webkit-background-size: cover;
+    background: url(https://i.imgur.com/NwCHfAT.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-}
+  background-size: cover;}
 
-  
-.box {
-     opacity: .8;
 
 }
+
+
 
 .zone {
    /* padding:30px 50px;
@@ -25,6 +22,45 @@ body {
     transition: all 0.3s linear;
 
 
+}
+h1 {
+    font-size: 4em;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.posts {
+    
+    font-size: 1em;
+    border: 3px white solid;
+    background-color: rgba(82, 91, 116, .8);
+    height: 0 auto;
+    width: 50%;
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.postsURL {
+    color: #09319D;
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 5px solid white;
+  border-radius: 15px;
 
 }
 
@@ -58,6 +94,7 @@ body {
 
 li {
     padding: 20px;
+    list-style-type: none;
 }
 
 a {
@@ -84,48 +121,25 @@ a {
     width: 100%;
 }
 
-/*.box {
-    background-color: gray;
-    padding: 100px;
-    margin: 20px;
-    text-align: center;
-    display: inline-block
-    background-size: cover;
-}
-*/
-/*.box {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
-}
-*/
-
 .box {
-  color: white;
-  background: ;
-  padding: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}   
+    background-color: gray;
+    padding: 130px;
+    margin: 20px;
+}
 
 footer {
     text-align: center;
 }
 
 .green{
-    background: #33A1DE ; /* Old browsers */
-    background: -moz-linear-gradient(top, #33A1DE  0%, #A9A18C 100%); /* FF3.6+ */
+    background: #2C4770; /* Old browsers */
+    background: -moz-linear-gradient(top, #2C4770 0%, #A9A18C 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#816C5B), color-stop(100%,#A9A18C)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #33A1DE   0%,#A9A18C 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #33A1DE  0%,#A9A18C 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #33A1DE   0%,#A9A18C 100%); /* IE10+ */
-    background: linear-gradient(top, #33A1DE   0%,#A9A18C 100%); 
-    color: #33A1DE  ;
+    background: -webkit-linear-gradient(top, #2C4770 0%,#A9A18C 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #2C4770 0%,#A9A18C 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #2C4770 0%,#A9A18C 100%); /* IE10+ */
+    background: linear-gradient(top, #2C4770 0%,#A9A18C 100%); 
+    color: #2C4770;
     font-size: 35px;
     font-family: 'Anton', sans-serif;
 
@@ -138,3 +152,4 @@ footer {
   
 
 }
+ **********************************************************************/
