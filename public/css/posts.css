@@ -21,6 +21,14 @@ input {
     radius: 15px;
 }
 
+img {
+    width: 50%;
+}
+
+section {
+    color: white;
+}
+
 h1,h2 {
     color: white;
     text-transform: uppercase;

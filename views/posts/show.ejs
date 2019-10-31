@@ -2,16 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Rock-Bottom</title>
+    <link rel="stylesheet" type="text/css" href="../css/posts.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
+      <nav class="zone green">
+        <ul class="main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/states">States</a></li>
+            <li><a href="/rocks">Rocks</a></li>
+            <li><a href='/registration'>Login and Register</a></li>
+            <li class="push"><a href="/about">About</a></li>
+            <li> 
+              
+        </ul>
+      </nav>
     </header>
     <main>
       <h1><%=posts.title%></h1>
+     
+    <div class='post'>
       <section>
-        <%=posts.body%>
+        <img src='<%=posts.IMG%>'><br>
+       Location: <%=posts.location%>
+       <%=posts.body%>
       </section>
+    </div>
+
       <section>
           <a href="/posts/<%=posts._id%>/edit">Edit</a>
       </section>
