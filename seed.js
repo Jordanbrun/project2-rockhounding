@@ -83,13 +83,13 @@ const coloradoRockSeed = async () => {
 	    {name: "Aquamarine",
 	     IMG: "aquamarine.jpg"},
 	    {name: "Rhodochrosite",
-	     IMG: "rhodochrosite.png"},
+	     IMG: "rhodochrosite.jpg"},
 	    {name: "Topaz",
 	     IMG: "topaz.jpg"},
 	    {name: "Amazonite",
-	     IMG: "amazonite.png"},
+	     IMG: "amazonite.jpg"},
 	    {name: "Smoky Quartz",
-	     IMG: "smokey-quartz.png"}
+	     IMG: "smokey-quartz.jpg"}
 	    ]
 	    console.log(colorado.rocks);
 

@@ -5,7 +5,10 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 require('dotenv').config();
 require('./db/db');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a849ae052847c7a9b2b4529970fc8b6e6e5ae69
 
 app.use(session({
 	secret: 'This is our secret string for passwords. A ha ha.',
@@ -30,16 +33,26 @@ app.use('/rocks', rocksController);
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
 
+const registrationController = require("./controllers/registration.js");
+app.use("/registration", registrationController);
 
-// here is the route to our homepage
+
+
 
 app.get('/', (req, res) => {
-	req.session.test = 'test';
-	console.log(req.session);
-	res.render('index.ejs');
+
+
+	res.render('index.ejs', {
+	logOut: req.session.logOutMsg, 
+	loggedIn: req.session.logged,
+    message: req.session.message});
 });
-//seedScripting.stateSeed();
+
 
 app.listen(process.env.PORT, () => {
   console.log('listening on port 3000');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 1a849ae052847c7a9b2b4529970fc8b6e6e5ae69
