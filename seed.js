@@ -184,7 +184,7 @@ const maineRockSeed = async () => {
 		    {name: "Amethyst",
 		     IMG: "amethyst.jpg"},
 		    {name: "Beryl",
-		     IMG: "beryl.jpg"},
+		     IMG: "Beryl.jpg"},
 		    {name: "Garnet",
 		     IMG: "garnet.jpg"}
 		    ]
@@ -364,7 +364,7 @@ const massachusettsRockSeed = async () => {
 		    {name: "Rhodonite",
 		     IMG: "rhodonite.jpg"},
 		     {name: "Babingtonite",
-		     IMG: "babingtonite.jpg"},
+		     IMG: "Babingtonite.jpg"},
 		    ]
 		    console.log(massachusetts.rocks);
 
