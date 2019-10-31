@@ -2,8 +2,21 @@
 <html>
 <head>
 	<title>Rockhounding</title>
+	 <link rel="stylesheet" type="text/css" href="/css/styleShow2page.css">
+	 <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class='rockShow2Page'>
+	<header>
+		<nav class="zone green">
+	      <ul class="main-nav">
+	          <li><a href="/">Home</a></li>
+	          <li><a href="/rocks">Rocks</a></li>
+	          <li class="push"><a href="/registration">Login & registration</a></li>
+	      </ul>
+		</nav>
+	</header>
+		
+	<main>
 		<h1><%=rock.name %></h1>
 		<h2></h2>
 		<ul>
@@ -14,5 +27,6 @@
 				<% } %>
 			</li>
 		</ul>
+	</main>
 	</body>
 </html>

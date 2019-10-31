@@ -3,8 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
-require('./db/db');
 require('dotenv').config();
+require('./db/db');
+
 
 app.use(session({
 	secret: 'This is our secret string for passwords. A ha ha.',
@@ -41,3 +42,4 @@ app.get('/', (req, res) => {
 
 app.listen(process.env.PORT, () => {
   console.log('listening on port 3000');
+});

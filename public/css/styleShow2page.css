@@ -1,5 +1,5 @@
 body {
-    background: url(https://i.imgur.com/e5WFFvA.jpg) no-repeat center center fixed; 
+    background: url(https://i.imgur.com/5ZlXo6y.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -90,14 +90,14 @@ footer {
 }
 
 .green{
-    background: #943E0F; /* Old browsers */
-    background: -moz-linear-gradient(top, #943E0F 0%, #A9A18C 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#816C5B), color-stop(100%,#A9A18C)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #943E0F 0%,#A9A18C 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #943E0F 0%,#A9A18C 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #943E0F 0%,#A9A18C 100%); /* IE10+ */
-    background: linear-gradient(top, #943E0F 0%,#A9A18C 100%); 
-    color: #943E0F;
+    background: #2C4770; /* Old browsers */
+    background: -moz-linear-gradient(top, #2C4770 0%, #050221 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#816C5B), color-stop(100%,#050221)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #2C4770 0%,#050221 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #2C4770 0%,#050221 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #2C4770 0%,#050221 100%); /* IE10+ */
+    background: linear-gradient(top, #2C4770 0%,#050221 100%); 
+    color: #2C4770;
     font-size: 35px;
     font-family: 'Anton', sans-serif;
 
