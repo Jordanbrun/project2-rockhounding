@@ -44,6 +44,12 @@ app.get('/', (req, res) => {
     message: req.session.message});
 });
 
+app.get('/about', (req, res) => {
+
+
+	res.render('about.ejs');
+});
+
 
 app.listen(process.env.PORT, () => {
   console.log('listening on port 3000');
