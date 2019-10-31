@@ -1,49 +1,33 @@
-body {
-    background: url(https://i.imgur.com/hQh4Nv8.jpg) no-repeat center center fixed; 
+.about {
+    
+     background: url(https://i.imgur.com/tp1kdA3.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 50%;
+  border: rgba(255, 255, 255, .7) 5px solid;
+  border-radius: 10px;
+}
+
+.aboutRocks {
+    background-color: rgba(255, 255, 255, .7);
+    width: 50%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 15px;
   text-align: center;
-}
-
-input {
-    radius: 15px;
-}
-
-h2 {
-    color: white;
-}
-
-
-input.text, select.select {
-    border: 1px solid #222;
-    background: #fff;
-    border-radius: 15px;
-    margin: 15px;
-}
-
-input.text {
-    border: 1px solid #222;
-    background: #fff;
-      border-radius: 15px;
-}
-
-
-.form1 {
-    width: 160px;
-    height: 160px;
-    background-color: ;
-    border-radius: 15px;
-    
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-    margin: auto;
-    color: grey;
 }
 
 
@@ -57,6 +41,7 @@ input.text {
     border-radius:4px;
     border:1px solid #bbb;
     transition: all 0.3s linear;
+
 
 }
 
@@ -127,14 +112,14 @@ footer {
 }
 
 .green{
-    background: #585858 ; /* Old browsers */
-    background: -moz-linear-gradient(top, #585858  0%, #A9A18C 100%); /* FF3.6+ */
+    background: #277455; /* Old browsers */
+    background: -moz-linear-gradient(top, #277455 0%, #A9A18C 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#816C5B), color-stop(100%,#A9A18C)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #585858  0%,#A9A18C 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #585858  0%,#A9A18C 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #585858    0%,#A9A18C 100%); /* IE10+ */
-    background: linear-gradient(top, #585858  0%,#A9A18C 100%); 
-    color: #585858  ;
+    background: -webkit-linear-gradient(top, #277455 0%,#A9A18C 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #277455 0%,#A9A18C 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #277455 0%,#A9A18C 100%); /* IE10+ */
+    background: linear-gradient(top, #277455 0%,#A9A18C 100%); 
+    color: #277455;
     font-size: 35px;
     font-family: 'Anton', sans-serif;
 
