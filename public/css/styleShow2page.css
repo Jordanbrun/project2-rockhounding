@@ -32,6 +32,18 @@ h1 {
     text-align: center;
 }
 
+.posts {
+    text-align: center;
+    font-size: 3em;
+    border: 3px white solid;
+    background-color: rgba(82, 91, 116, .5);
+    height: 0 auto;
+    width: 50%;
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 .center {
   display: block;
@@ -40,6 +52,7 @@ h1 {
   width: 50%;
   border: 5px solid white;
   border-radius: 15px;
+
 }
 
 .zone:hover {
@@ -72,6 +85,7 @@ h1 {
 
 li {
     padding: 20px;
+    list-style-type: none;
 }
 
 a {
