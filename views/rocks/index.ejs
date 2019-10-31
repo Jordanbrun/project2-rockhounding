@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Rockhounding</title>
+	<link rel="stylesheet" type="text/css" href="css/states-style.css">
 </head>
 <body>
 		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-				</ul>
-				
+		 	<nav class="zone green">
+			      <ul class="main-nav">
+			          <li><a href="/">Home</a></li>
+			          <li><a href="/states">States</a></li>
+			          <li class="push"><a href="/registration">Login & register</a></li>
+			      </ul>
 			</nav>
 		</header>
-	<ul>
-<% for(let i = 0; i < rocks.length; i++){ %>
+		<main>
+		<ul>
+		<% for(let i = 0; i < rocks.length; i++){ %>
           <li>
             <a href="/rocks/<%=rocks[i]._id%>"><%=rocks[i].name%></a>
           </li>
         <% } %>
        </ul>
+       
+       	 <!-- <div class="zone blue grid-wrapper">
+			<% for(let i = 0; i < rocks.length; i++){ %>
+			<a href='/rocks' class='rockName'><%=rocks[i].name%>
+		 	<div class="box zone">
+		 		<img class="portfolio" src="/images/<%=rocks[i].IMG %>" name='<%=rocks[i].name%>'>
+			 </div>
+			</a>
+			<% } %>
+		 </div> -->
+		
+
+
+
+       </main>
 </body>
 </html>
