@@ -9,6 +9,7 @@ body {
 }
 
 
+
 .zone {
    /* padding:30px 50px;
     margin:40px 60px;*/
@@ -21,6 +22,24 @@ body {
     transition: all 0.3s linear;
 
 
+}
+h1 {
+    font-size: 4em;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 5px solid white;
+  border-radius: 15px;
 }
 
 .zone:hover {
