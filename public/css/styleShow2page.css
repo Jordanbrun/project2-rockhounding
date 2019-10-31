@@ -5,9 +5,16 @@ body {
   -o-background-size: cover;
   background-size: cover;}
 
-
+button {
+   background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
-
 
 
 .zone {
@@ -30,6 +37,12 @@ h1 {
     color: white;
     text-decoration: underline;
     text-align: center;
+}
+
+.rockShow{
+  text-align: center;
+   font-family: 'Anton', sans-serif;
+   color: white;
 }
 
 .posts {
@@ -98,7 +111,7 @@ li {
 }
 
 a {
-    color: #f5f5f6;
+    color: white;
     text-decoration: none;
 }
 
@@ -139,7 +152,7 @@ footer {
     background: -o-linear-gradient(top, #2C4770 0%,#A9A18C 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #2C4770 0%,#A9A18C 100%); /* IE10+ */
     background: linear-gradient(top, #2C4770 0%,#A9A18C 100%); 
-    color: #2C4770;
+    color: white;
     font-size: 35px;
     font-family: 'Anton', sans-serif;
 
