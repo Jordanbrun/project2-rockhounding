@@ -353,6 +353,44 @@ const arkansasRockSeed = async () => {
 	}	
 }
 
+const massachusettsRockSeed = async () => {
+	try { 
+		const massachusetts = await State.findOne({"name": "Massachusetts"});
+	    if (massachusetts.rocks !== "undefined" && massachusetts.rocks.length > 0){
+	        return;
+	    } else {
+
+		    const rhodoniteRockArr = [
+		    {name: "Rhodonite",
+		     IMG: "rhodonite.jpg"},
+		     {name: "Babingtonite",
+		     IMG: "babingtonite.jpg"},
+		    ]
+		    console.log(massachusetts.rocks);
+
+		    console.log(massachusettsRockArr);
+
+		    const createdRocks = await Rock.create(massachusettsRockArr)
+		    		for (let i=0 ; i<createdRocks.length; i++) {
+		    			console.log(createdRocks[i]);
+		    			massachusetts.rocks.push(createdRocks[i])
+		    			await massachusetts.save();
+		    			await createdRocks[i].save();
+		    		}
+
+		    		for (let i=0; i<createdRocks.length; i++) {
+		    			createdRocks[i].states.push(massachusetts);
+		    			await createdRocks[i].save();
+		    			console.log(createdRocks[i]);
+		    		}
+		    
+		}
+	} catch (err) {
+		console.log(err);
+		res.send(err);
+	}	
+}
+
 
 const seedAll = async () =>
 {
@@ -363,6 +401,7 @@ const seedAll = async () =>
 	await alaskaRockSeed();
 	await arizonaRockSeed();
 	await arkansasRockSeed();
+	await massachusettsRockSeed();
 }
 
 seedAll();
