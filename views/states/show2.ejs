@@ -18,20 +18,24 @@
 		
 	<main>
 		<h1><%=rock.name %></h1>
+		<ul>
+			<li>
+			<img src='/images/<%=rock.IMG %>' class='center'>
+		</li>
+		</ul>	
 		
-		<img src='/images/<%=rock.IMG %>' class='center'>
-
-		<div class='posts'>
 		<ul>
 				 <% for(let i = 0; i < posts.length; i++){ %>
+				 <div class='posts'> 
 				<li>
-					<a href="/posts/<%=posts[i].id%>"><%=posts[i].title%></a>
+					<a href="/posts/<%=posts[i].id%>" class='postsURL'><%=posts[i].title%></a>
 				</li>
+				</div>
 				<% } %>
 			</li>
 		</ul>
-	</div>
 	
+
 	</main>
 	</body>
 </html>
