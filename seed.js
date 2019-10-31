@@ -360,7 +360,7 @@ const massachusettsRockSeed = async () => {
 	        return;
 	    } else {
 
-		    const rhodoniteRockArr = [
+		    const massachusettsRockArr = [
 		    {name: "Rhodonite",
 		     IMG: "Rhodonite.jpg"},
 		     {name: "Babingtonite",
