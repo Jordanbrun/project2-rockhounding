@@ -24,10 +24,11 @@ iframe {
     display: block;
   margin-left: auto;
   margin-right: auto;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-weight: bold;
   border-radius: 15px;
   text-align: center;
+   font-family: 'Anton', sans-serif;
 }
 
 
@@ -92,10 +93,6 @@ a {
 }
 
 /* PROJECT GRID*/
-
-.homepage-body {
-
-}
 
 .box > img {
     width: 100%;
