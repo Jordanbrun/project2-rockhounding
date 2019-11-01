@@ -4,8 +4,8 @@ body {
   -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
-  background-size: auto;
-  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
   text-align: center;
 }
 
