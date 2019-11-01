@@ -34,6 +34,7 @@ h1 {
     text-align: center;
 }
 
+/*This gives the image a shadow color when we hover over it*/
 .zone:hover {
     -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
@@ -50,7 +51,7 @@ h1 {
     margin: 0;
 
 }
-
+/*This is the class that pushes our about section to the right*/
 .push {
     margin-left: auto;
 }
@@ -62,6 +63,8 @@ h1 {
 
 
  }
+
+ /*Nav bar text*/
 }
 
 li {
@@ -83,7 +86,7 @@ a {
 }
 
 /* PROJECT GRID*/
-
+/*This is associated with the grid we created for the photos on state/show.ejs*/
 .grid-wrapper {
     display: grid;
     grid-gap: 20px;
@@ -91,11 +94,12 @@ a {
 
 }
 
+/*This is so the img never gets bigger than the div we created. */
 .box > img {
     width: 100%;
     height: 200px;
 }
-
+/*Added padding and margin so the box gives a border around the image*/
 .box {
     background-color: gray;
     padding: 20px;
@@ -109,6 +113,7 @@ footer {
 }
 
 
+/*This is the styling for the nav bar. Declaring that this design will work on other browsers*/
 .green{
     background: #B0B0B0 ; /* Old browsers */
     background: -moz-linear-gradient(top, #B0B0B0    0%, #A9A18C 100%); /* FF3.6+ */
@@ -123,16 +128,10 @@ footer {
 
 }
 
-/***********************************************************************
- *  Red Background
- **********************************************************************/
-.red{
-
-
-}
+/*These next two are the styling for the background behind the images*/
 
 /***********************************************************************
- *  Yellow Background
+ *  Yellow Background - Ended up being a grey background. But this is what shows behind our
  **********************************************************************/
 .yellow{
     background: #B0B0B0; /* Old browsers */
