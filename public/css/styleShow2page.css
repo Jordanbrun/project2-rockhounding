@@ -30,6 +30,7 @@ button {
 
 
 }
+
 h1 {
     font-size: 4em;
     font-family: 'Anton', sans-serif;
@@ -125,7 +126,6 @@ a {
 }
 
 /* PROJECT GRID*/
-
 
 .box > img {
     width: 100%;
