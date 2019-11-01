@@ -64,7 +64,7 @@ const stateSeed = async () => {
 	    {name: "Wisconsin"},
 	    {name: "Wyoming"}
 	    ]
-	    console.log(stateArr);
+	    //console.log(stateArr);
 	    await State.create(stateArr);
 	    
 	}
@@ -391,6 +391,77 @@ const massachusettsRockSeed = async () => {
 	}	
 }
 
+const californiaRockSeed = async () => {
+	try { 
+		const california = await State.findOne({"name": "California"});
+	    if (california.rocks !== "undefined" && california.rocks.length > 0){
+	        return;
+	    } else {
+
+		    const californiaRockArr = [
+		    {name: "Serpentinite",
+		     IMG: "serpentinite.jpg"},
+		    {name: "Benitoite", 
+			 IMG: "benitoite.jpg"}
+		    ]
+		    console.log(california.rocks);
+
+		    console.log(californiaRockArr);
+
+		    const createdRocks = await Rock.create(californiaRockArr)
+		    		for (let i=0 ; i<createdRocks.length; i++) {
+		    			console.log(createdRocks[i]);
+		    			california.rocks.push(createdRocks[i])
+		    			await california.save();
+		    			await createdRocks[i].save();
+		    		}
+
+		    		for (let i=0; i<createdRocks.length; i++) {
+		    			createdRocks[i].states.push(california);
+		    			await createdRocks[i].save();
+		    			console.log(createdRocks[i]);
+		    		}
+		}
+	} catch (err) {
+		console.log(err);
+		res.send(err);
+	}	
+}
+
+const texasRockSeed = async () => {
+	try { 
+		const texas = await State.findOne({"name": "Texas"});
+	    if (texas.rocks !== "undefined" && texas.rocks.length > 0){
+	        return;
+	    } else {
+
+		    const texasRockArr = [
+		    {name: "Cretaceous Fossils",
+		     IMG: "Cretaceous.jpg"},
+		    ]
+		    console.log(texas.rocks);
+
+		    console.log(texasRockArr);
+
+		    const createdRocks = await Rock.create(texasRockArr)
+		    		for (let i=0 ; i<createdRocks.length; i++) {
+		    			console.log(createdRocks[i]);
+		    			texas.rocks.push(createdRocks[i])
+		    			await texas.save();
+		    			await createdRocks[i].save();
+		    		}
+
+		    		for (let i=0; i<createdRocks.length; i++) {
+		    			createdRocks[i].states.push(texas);
+		    			await createdRocks[i].save();
+		    			console.log(createdRocks[i]);
+		    		}
+		}
+	} catch (err) {
+		console.log(err);
+		res.send(err);
+	}	
+}
 
 const seedAll = async () =>
 {
@@ -402,6 +473,8 @@ const seedAll = async () =>
 	await arizonaRockSeed();
 	await arkansasRockSeed();
 	await massachusettsRockSeed();
+	await californiaRockSeed();
+	await texasRockSeed();
 }
 
 seedAll();

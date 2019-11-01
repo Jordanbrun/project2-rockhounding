@@ -5,9 +5,9 @@ const bcrypt = require("bcryptjs");
 
 
 router.post('/login', async (req, res) => {
-
+  console.log("I am in the login route")
   
-  // try {
+   try {
     const foundUser = await User.findOne({username: req.body.username});
     
     if(foundUser){
@@ -16,10 +16,10 @@ router.post('/login', async (req, res) => {
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
 
           req.session.message = '';
-         
+          req.session.id = foundUser._id
           req.session.username = foundUser.username;
           req.session.logged   = true;
-
+          console.log(req.session, "session from login route")
           res.redirect('/')
         } else {
             
@@ -32,9 +32,9 @@ router.post('/login', async (req, res) => {
       res.redirect('/');
       
 	 }
-  // } catch(err){
-  //   res.send(err);
-  // }
+  } catch(err){
+    res.send(err);
+  }
 });
 
 
@@ -52,7 +52,7 @@ router.get('/logout', (req, res) => {
 
 
 router.post("/registration", async (req, res) => {
-  
+  console.log("I am in the registration route")
   const password = req.body.password
   const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
@@ -68,7 +68,9 @@ router.post("/registration", async (req, res) => {
   console.log(createdUser)
 
   req.session.username = createdUser.username;
+  req.session.id = createdUser._id
   req.session.logged = true;
+  console.log(req.session, "session from registration route")
   res.redirect("/");
 
 

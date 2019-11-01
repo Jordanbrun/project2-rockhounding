@@ -34,10 +34,10 @@ const registrationController = require("./controllers/registration.js");
 app.use("/registration", registrationController);
 
 
-
+// home page
 
 app.get('/', (req, res) => {
-
+	console.log(req.session, " Session in homepage");
 	res.render('index.ejs', {
 	logOut: req.session.logOutMsg, 
 	loggedIn: req.session.logged,

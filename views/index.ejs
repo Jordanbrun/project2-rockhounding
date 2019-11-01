@@ -7,7 +7,8 @@
 
 </head>
 <body>
-  <nav class="zone green">
+  <!-- This is the nav bar for every page. -->
+  <nav class="zone green"> 
       <ul class="main-nav">
           <li><a href="/">Home</a></li>
           <li><a href="/states">States</a></li>
@@ -15,7 +16,7 @@
           <li><a href='/registration'>Login and Register</a></li>
           <li class="push"><a href="/about">About</a></li>
           <li> 
-            <% if (loggedIn){ %>
+  <% if (loggedIn){ %>
             <a href="users/logout">Logout</a>
               <% } %>
             

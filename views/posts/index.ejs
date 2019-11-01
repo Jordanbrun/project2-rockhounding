@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title>Rockhounding</title>
+   <link rel="stylesheet" type="text/css" href="css/about.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class='posts'>
 	  <nav class="zone green">
       <ul class="main-nav">
           <li><a href="/">Home</a></li>
@@ -15,17 +17,8 @@
             
       </ul>
 </nav>
-<p> Your Post has been created!
 
-	Listing all posts here just to see what is going on
-</p>
+<p class ='text'> Your Post has been updated</p>
 
-<ul>
-<% for(let i = 0; i < posts.length; i++){ %>
-          <li>
-            <a href="/posts/<%=posts[i]._id%>"><%=posts[i]%></a>
-          </li>
-        <% } %>
-       </ul>
 </body>
 </html>

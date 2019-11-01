@@ -7,6 +7,7 @@
 
 <body>
 	<header>
+		<!-- This is the main nav bar for every page -->
 		  <nav class="zone green">
 		      <ul class="main-nav">
 		          <li><a href="/">Home</a></li>
@@ -15,7 +16,7 @@
 		          <li><a href='/registration'>Login and Register</a></li>
 		          <li class="push"><a href="/about">About</a></li>
 		          <li> 
-		            
+             
 		      </ul>
 		</nav>
 	</header>
@@ -25,16 +26,23 @@
 		  	<h1><%= state.name%></h1>
 		 </div>
 
-
+		 <!-- This is a div for where CSS grid is declared. We will use .grid-wrapper in style1.css -->
 		 <div class="zone blue grid-wrapper">
+		 	<!-- Grabbing the rocks by the rocks array on controllers/states.js. Allows us to use only one div -->
 			<% for(let i = 0; i < rocks.length; i++){ %>
+			<!-- This href allows us to click on the images that are being shown, and then redirect you to their show page by ID  and also display their name-->
 			<a href="/states/<%=state.name%>/<%=rocks[i].id%>" class='rockName'><%=rocks[i].name%>
+		 	
+		 	<!--  -->
 		 	<div class="box zone"> 
-		 		<img class="portfolio" src="/images/<%=rocks[i].IMG %>" name='<%=rocks[i].name%>'>
+		 		<!-- This runs through the rocks array and finds each rock by their img and name -->
+		 		<img class="rocksImage" src="/images/<%=rocks[i].IMG %>" name='<%=rocks[i].name%>'>
 			 </div>
 			</a>
+
 			<% } %>
 		 </div>
+
 		
 
 	</main>
