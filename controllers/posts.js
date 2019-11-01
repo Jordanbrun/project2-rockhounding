@@ -57,6 +57,7 @@ router.post('/', async (req, res) =>{
 
     res.redirect('/posts');
 
+
     } catch(err) {
       console.log(err)
         res.send(err);
