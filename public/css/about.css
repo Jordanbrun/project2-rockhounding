@@ -1,6 +1,6 @@
 .about {
     
-     background: url(https://i.imgur.com/tp1kdA3.jpg) no-repeat center center fixed; 
+  background: url(https://i.imgur.com/tp1kdA3.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,7 +8,7 @@
 }
 
 .posts {
- background: url(https://i.imgur.com/Z4Yc22U.jpg) no-repeat center center fixed; 
+ background: url(https://i.imgur.com/Z4Yc22U.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -23,7 +23,7 @@ iframe {
   margin-right: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  width: 50%;
+  max-width: 50%;
   border: rgba(255, 255, 255, .7) 5px solid;
   border-radius: 10px;
 }
@@ -43,7 +43,6 @@ iframe {
   font-weight: bold;
   border-radius: 15px;
   text-align: center;
-  font-family: 'Anton', sans-serif;
 }
 
 
@@ -94,6 +93,7 @@ li {
 a {
     color: #f5f5f6;
     text-decoration: none;
+    font-family: 'Anton', sans-serif;
 }
 
 
