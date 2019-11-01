@@ -456,20 +456,6 @@ const texasRockSeed = async () => {
 		    			await createdRocks[i].save();
 		    			console.log(createdRocks[i]);
 		    		}
-
-		    const topaz = await Rock.findOne({"name": "Topaz"})
-		    
-			texas.rocks.push(topaz);
-			topaz.states.push(texas)
-			await teaxs.save();
-			await topaz.save();
-
-			const agate = await Rock.findOne({"name": "Agate"})
-		    
-			texas.rocks.push(agate);
-			agate.states.push(texas);
-			await teaxs.save();
-			await agate.save();
 		}
 	} catch (err) {
 		console.log(err);
