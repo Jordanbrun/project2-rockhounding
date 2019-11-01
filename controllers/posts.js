@@ -1,85 +1,147 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require("../models/user");
-const bcrypt = require("bcryptjs");
+const Post = require("../models/post.js");
+const State = require("../models/state.js");
+const User = require("../models/user.js");
+const Rock = require("../models/rock.js");
 
 
-router.post('/login', async (req, res) => {
-  console.log("I am in the login route")
-  
-   try {
-    const foundUser = await User.findOne({username: req.body.username});
-    
-    if(foundUser){
+router.get('/', async (req, res)=>{
 
-        
-        if(bcrypt.compareSync(req.body.password, foundUser.password)){
-
-          req.session.message = '';
-          req.session.id = foundUser._id
-          req.session.username = foundUser.username;
-          req.session.logged   = true;
-          console.log(req.session, "session from login route")
-          res.redirect('/')
-        } else {
-            
-           req.session.message = 'Username or password is incorrect';
-           res.redirect('/');
-        }
-    } else {
-
-      req.session.message = 'Username or password is incorrect';
-      res.redirect('/');
-      
-   }
+  try {
+  	const foundPosts = await Post.find({});
+    res.render('posts/index.ejs',{
+    	posts: foundPosts
+    });
   } catch(err){
+  	console.log(err);
     res.send(err);
   }
+ });
+
+//new route
+router.get('/new', async (req, res) =>{
+    try{
+
+    	const allUsers = await User.find({});
+    	const allRocks = await Rock.find({});
+    	const allStates = await State.find({});
+    	    res.render('posts/new.ejs', {
+    	        users: allUsers,
+    	        rocks: allRocks,
+    	        states: allStates
+    	    })
+    } catch(err) {
+    
+    	console.log(err);
+    	res.send(err);
+    }    
+            
+});
+
+// create
+router.post('/', async (req, res) =>{
+    try{
+
+    const foundRock = await Rock.findById(req.body.rockId);
+    const foundState = await State.findById(req.body.stateId);
+    const newPost = await Post.create(req.body);
+
+    await foundRock.posts.push(newPost);
+    await foundState.posts.push(newPost);
+    await newPost.states.push(foundState);
+    await newPost.rocks.push(foundRock);
+    await foundRock.save();
+    await foundState.save();
+    await newPost.save();
+
+    res.redirect('/posts');
+
+    } catch(err) {
+    	console.log(err)
+        res.send(err);
+    }
+
+
 });
 
 
-router.get('/logout', (req, res) => {
 
-  req.session.destroy((err) => {
-    if(err){
-      res.send(err);
-    } else {
-      res.redirect('/');
-    }
-  })
+//edit 
+router.get('/:id/edit', async (req, res) =>{
+   try { 
+   	const allStates = await State.find({})
+   	const allRocks = await State.find({})
+   	const foundPost = await Post.findById(req.params.id);
 
-})
+   	res.render("posts/edit.ejs", {
+   		post: foundPost,
+   		states: allStates,
+   		rocks: allRocks
+   	})
+   } catch(err){
+   	console.log(err);
+   	res.send(err);
+   }
 
-
-router.post("/registration", async (req, res) => {
-  console.log("I am in the registration route")
-  const password = req.body.password
-  const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-
-
-  const userDbEntry = {};
-
-
-  userDbEntry.username = req.body.username;
-  userDbEntry.password = passwordHash;
-  userDbEntry.email = req.body.email;
-
-  const createdUser = await User.create(userDbEntry);
-  console.log(createdUser)
-
-  req.session.username = createdUser.username;
-  req.session.id = createdUser._id
-  req.session.logged = true;
-  console.log(req.session, "session from registration route")
-  res.redirect("/");
-
-
-})
+    });
 
 
 
+//SHOW ROUTE FOR POSTS
+
+router.get('/:id', async (req, res) =>{
+
+	try {
+
+		const foundPost = await Post.findById(req.params.id);
+		res.render("posts/show.ejs", {
+			posts: foundPost
+
+		})
+	} catch(err) {
+		console.log(err);
+		res.send(err)
+	}
+
+});
 
 
+
+router.put('/:id', async (req, res)=>{
+	try {
+
+		const findUpdatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true});
+		res.redirect('/posts/' + req.params.id);
+	} catch {
+		console.log(err);
+		res.send(err);
+	}
+
+});
+
+router.delete('/:id', async (req, res)=>{
+  try {
+
+    const deletePost = await Post.findByIdAndRemove(req.params.id);
+    const findState = await State.findOne({'posts': req.params.id});
+    const findRock = await Rock.findOne({'posts': req.params.id});
+
+    const [deletedArticleResponse, foundState, foundRock] = await Promise.all([deletePost, findState, findRock]);
+    console.log(foundState);
+    console.log(foundRock);
+    foundState.posts.remove(req.params.id);
+    foundRock.posts.remove(req.params.id);
+    await foundState.save()
+    await foundRock.save()
+    console.log(foundState);
+    console.log(foundRock)
+    res.redirect('/posts')
+  } catch(err){
+    console.log(err)
+    res.send(err);
+  }
+});
 
 module.exports = router;
 
