@@ -64,7 +64,7 @@ const stateSeed = async () => {
 	    {name: "Wisconsin"},
 	    {name: "Wyoming"}
 	    ]
-	    console.log(stateArr);
+	    //console.log(stateArr);
 	    await State.create(stateArr);
 	    
 	}

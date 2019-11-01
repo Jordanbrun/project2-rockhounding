@@ -9,12 +9,12 @@ const Rock = require("../models/rock.js");
 router.get('/', async (req, res)=>{
 
   try {
-  	const foundPosts = await Post.find({});
+    const foundPosts = await Post.find({});
     res.render('posts/index.ejs',{
-    	posts: foundPosts
+      posts: foundPosts
     });
   } catch(err){
-  	console.log(err);
+    console.log(err);
     res.send(err);
   }
  });
@@ -23,18 +23,18 @@ router.get('/', async (req, res)=>{
 router.get('/new', async (req, res) =>{
     try{
 
-    	const allUsers = await User.find({});
-    	const allRocks = await Rock.find({});
-    	const allStates = await State.find({});
-    	    res.render('posts/new.ejs', {
-    	        users: allUsers,
-    	        rocks: allRocks,
-    	        states: allStates
-    	    })
+      const allUsers = await User.find({});
+      const allRocks = await Rock.find({});
+      const allStates = await State.find({});
+          res.render('posts/new.ejs', {
+              users: allUsers,
+              rocks: allRocks,
+              states: allStates
+          })
     } catch(err) {
     
-    	console.log(err);
-    	res.send(err);
+      console.log(err);
+      res.send(err);
     }    
             
 });
@@ -65,7 +65,7 @@ router.post('/', async (req, res) =>{
     res.redirect('/posts');
 
     } catch(err) {
-    	console.log(err)
+      console.log(err)
         res.send(err);
     }
 
@@ -77,18 +77,18 @@ router.post('/', async (req, res) =>{
 //edit 
 router.get('/:id/edit', async (req, res) =>{
    try { 
-   	const allStates = await State.find({})
-   	const allRocks = await State.find({})
-   	const foundPost = await Post.findById(req.params.id);
+    const allStates = await State.find({})
+    const allRocks = await State.find({})
+    const foundPost = await Post.findById(req.params.id);
 
-   	res.render("posts/edit.ejs", {
-   		post: foundPost,
-   		states: allStates,
-   		rocks: allRocks
-   	})
+    res.render("posts/edit.ejs", {
+      post: foundPost,
+      states: allStates,
+      rocks: allRocks
+    })
    } catch(err){
-   	console.log(err);
-   	res.send(err);
+    console.log(err);
+    res.send(err);
    }
 
     });
@@ -99,31 +99,31 @@ router.get('/:id/edit', async (req, res) =>{
 
 router.get('/:id', async (req, res) =>{
 
-	try {
+  try {
 
-		const foundPost = await Post.findById(req.params.id);
-		res.render("posts/show.ejs", {
-			posts: foundPost
+    const foundPost = await Post.findById(req.params.id);
+    res.render("posts/show.ejs", {
+      posts: foundPost
 
-		})
-	} catch(err) {
-		console.log(err);
-		res.send(err)
-	}
+    })
+  } catch(err) {
+    console.log(err);
+    res.send(err)
+  }
 
 });
 
 
 
 router.put('/:id', async (req, res)=>{
-	try {
+  try {
 
-		const findUpdatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true});
-		res.redirect('/posts/' + req.params.id);
-	} catch {
-		console.log(err);
-		res.send(err);
-	}
+    const findUpdatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.redirect('/posts/' + req.params.id);
+  } catch {
+    console.log(err);
+    res.send(err);
+  }
 
 });
 
