@@ -42,22 +42,15 @@ router.get('/new', async (req, res) =>{
 // create
 router.post('/', async (req, res) =>{
     try{
-    //const foundUser = await User.findById(req.body.userId);
     const foundRock = await Rock.findById(req.body.rockId);
     const foundState = await State.findById(req.body.stateId);
     const newPost = await Post.create(req.body);
-
-    //foundUser.posts.push(newPost);
-
-
-    // look up .populate()
 
     await foundRock.posts.push(newPost);
     await foundState.posts.push(newPost);
     await newPost.states.push(foundState);
     await newPost.rocks.push(foundRock);
 
-    //await foundUser.save();
     await foundRock.save();
     await foundState.save();
     await newPost.save();
