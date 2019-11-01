@@ -7,6 +7,14 @@
   background-size: cover;
 }
 
+.posts {
+ background: url(https://i.imgur.com/Z4Yc22U.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+
 /*This is the youtube videos properties and its location on the screen. If I ever centered something on the screen, 
 this is what I would use,*/ 
 iframe { 
@@ -18,6 +26,12 @@ iframe {
   width: 50%;
   border: rgba(255, 255, 255, .7) 5px solid;
   border-radius: 10px;
+}
+
+.text {
+  color: white;
+  font-size: 3em;
+  text-align: center;
 }
 
 .aboutRocks {
