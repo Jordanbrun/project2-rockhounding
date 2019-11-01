@@ -43,7 +43,7 @@ h1 {
 }
 
 /*nav*/
-
+/*Used flexbox to for the nav*/
 .main-nav {
     display: flex;
     list-style: none;

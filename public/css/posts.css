@@ -5,8 +5,10 @@ body {
   -moz-background-size: auto;
   -o-background-size: auto;
   background-size: cover;
-  /*background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   text-align: center;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .post {
