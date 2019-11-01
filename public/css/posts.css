@@ -1,10 +1,11 @@
 body {
     /*Declaring other browsers so our background will cover for each*/
  background: url(https://i.imgur.com/hQh4Nv8.jpg); 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
@@ -15,7 +16,6 @@ body {
   margin-right: auto;
 width: 25%;
 border-radius: 15px;
-
 }
 
 

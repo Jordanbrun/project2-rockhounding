@@ -1,10 +1,11 @@
 .about {
     
   background: url(https://i.imgur.com/tp1kdA3.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .posts {
@@ -15,6 +16,7 @@
   background-size: cover; 
 }
 
+
 /*This is the youtube videos properties and its location on the screen. If I ever centered something on the screen, 
 this is what I would use,*/ 
 iframe { 
@@ -23,7 +25,7 @@ iframe {
   margin-right: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  max-width: 50%;
+  /*max-width: 50%;*/
   border: rgba(255, 255, 255, .7) 5px solid;
   border-radius: 10px;
 }
