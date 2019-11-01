@@ -74,33 +74,6 @@ a {
     height: 50vh;
 }
 
-/* PROJECT GRID*/
-
-.homepage-body {
-
-}
-
-.box > img {
-    width: 100%;
-}
-
-/*.box {
-    background-color: gray;
-    padding: 100px;
-    margin: 20px;
-    text-align: center;
-    display: inline-block
-    background-size: cover;
-}
-*/
-/*.box {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
-}
-*/
-
 .box {
   color: white;
   background: ;

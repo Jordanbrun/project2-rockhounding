@@ -34,7 +34,7 @@ const registrationController = require("./controllers/registration.js");
 app.use("/registration", registrationController);
 
 
-
+// home page
 
 app.get('/', (req, res) => {
 
