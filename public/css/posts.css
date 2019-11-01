@@ -1,5 +1,6 @@
 body {
-    background: url(https://i.imgur.com/hQh4Nv8.jpg) no-repeat center center fixed; 
+    /*Declaring other browsers so our background will cover for each*/
+    background: url(https://i.imgur.com/hQh4Nv8.jpg); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -105,11 +106,14 @@ input.text {
     font-size: .5em;
     padding: 0;
  }
+
+
 }
 
 li {
     padding: 20px;
 }
+/*This is for the nav bars font color, also giving them no bullets*/
 
 a {
     color: #f5f5f6;
@@ -145,6 +149,8 @@ footer {
     text-align: center;
 }
 
+
+/*This is all of the styling for the navbar. This code below allows us to run the same thing through firefox, opera*/
 .green{
     background: #585858 ; /* Old browsers */
     background: -moz-linear-gradient(top, #585858  0%, #A9A18C 100%); /* FF3.6+ */
@@ -159,8 +165,4 @@ footer {
 
 }
 
-/***********************************************************************
- *  Red Background
- **********************************************************************/
-.red{
   

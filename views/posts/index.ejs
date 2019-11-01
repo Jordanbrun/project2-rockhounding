@@ -21,7 +21,9 @@
 </p>
 
 <ul>
+  <!-- looping through the posts array, found in controllers/posts.js -->
 <% for(let i = 0; i < posts.length; i++){ %>
+
           <li>
             <a href="/posts/<%=posts[i]._id%>"><%=posts[i]%></a>
           </li>
