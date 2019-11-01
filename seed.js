@@ -184,7 +184,7 @@ const maineRockSeed = async () => {
 		    {name: "Amethyst",
 		     IMG: "amethyst.jpg"},
 		    {name: "Beryl",
-		     IMG: "Beryl.jpg"},
+		     IMG: "beryl.jpg"},
 		    {name: "Garnet",
 		     IMG: "garnet.jpg"}
 		    ]
